@@ -1,0 +1,25 @@
+SENIOR PROJECT MIND MAP
+
+initial idea: markforged is 3d printing high stiffness-to-weight parts out of long carbon fibers; other people are printing curved layers (using the z-axis). what if we could combine those ideas? the mark one is currently subject to the same flat-layer restriction that almost all other FDM printers are. if we could use their carbon fiber extrusion technique to print curved layers, much more complex parts could be printed with the benefit of long carbon fibers.
+
+the part strength benefit of curved layer printing doesn't just apply to carbon fiber though; typical desktop FDM prints suffer the same problem - extruded material has much greater tensile strength in the extrusion direction than between adhered layers. the any long, skinny, vertically oriented geometries don't fare well because they're made of very thin layers that don't get a lot of surface area to adhere to each other. many parts are impossible to orient on a typical printer in such a way that optimizes layer directions for all parts. fill directions can be chosen sometimes, but still only parallel to the build surface. this goes for cartesian and delta printers alike.
+
+there currently don't seem to exist any slicing engines that make contoured slices, even less so any slicing engines that intelligently optimize for mechanical part strength. it should be possible to design a program to slice a part and generate a toolpath that makes the strongest possible part, given the part geometries and expected loading. of course, FEA would be involved. FEA-based design automation is already being done in industry to shave unnecessary material off parts, to save cost and weight. 
+
+it would be great to validate the result of this slicing by making some actual prints and testing them, say, on the instron machine. to have an actual mark one printer available for this would be great as well. the mark one doesn't do curved layers, of course, but that wouldn't be the death of this project. one option would be to analyze and test only prismatic parts; the analysis would be reduced to planar symmetry. 
+
+to actually print 3D curved layers would be a huge challenge even if a suitable slicing engine existed. curved layer printing is possible on a cartesian or delta printer, but only if no undercuts are present. a robot arm with 6 DOFs would work to the extent that the arm itself didn't get in the way of the print. then there's the problem of generating and printing support material. we might look into using one of wei's existing robot arms for this; we could attach a typical plastic filament spool, a bowden extruder, and a heated nozzle, and all other necessary components to the arm. of course, this would mean a lot of software development as well...fortunately, the open source community has done much of the necessary work already (see reprap).
+
+all of these ideas could very well be entire projects on their own; it'd be impossible to do them all in one year with two or three people. here's some possible paths; a good senior project would probably just be some small segment of one of them, iterated a bunch of times as things inevitably go horribly wrong:
+
+	make some FDM test specimens -> do mechanical testing on FDM pieces -> characterize general mechanical properties of FDM materials -> see if dimensional analysis can be used to swap different FDM materials in tests -> learn FEA -> apply FEA to FDM materials -> use FEA to optimize extrusion directions in FDM parts -> make 3D slicing engine-> print and test parts
+	same as previous, but only 2D
+	acquire carbon fiber printer -> hack/reverse engineer carbon fiber printer -> create new carbon fiber printer capable of 3D layers
+	acquire regular plastic printer -> same as previous
+	
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,18 @@
+9/4/14
+send links to wei about open source printing projects, kit/part vendors
+send links to wei from research into current work on composite part printing
+read up on STL vs AMF file formats
+get lab access
+talk to Chris about LaTeX (lol)
+check out Universal Robot (open interface, in python)
+buy a kit?
+
+--
+
+talk to wei about:
+	robot arm kinematics - resolution varies in space within work envelope?
+	robot arm software/control interface
+	when to test traditional 3D prints - which printer to use (makerbot or our arm?)
+start using version control
+organize bookmarks document into categories
+use cooper library subscriptions to look for more papers
