@@ -40,6 +40,9 @@ Description of Skeinforge software (stl -> gcode)
 <http://slic3r.org//>  
 Slic3r 3D printing software (stl -> gcode); open source.
 
+<http://johnmacfarlane.net/pandoc/index.html/>  
+Pandoc: convert between different markup formats like HTML, Markdown, LaTeX, docx, etc.
+
 ## Printers
 
 <https://markforged.com//>  
