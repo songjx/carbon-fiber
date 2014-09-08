@@ -71,6 +71,9 @@ Chopped carbon fiber printing by ORNL.
 <http://www.ams.org/samplings/feature-column/fc-2014-03/>  
 American Math Society feature column article on a basic STL slicing algorithm, in layman's terms
 
+<http://onerobotics.com/2013/12/28/introduction-to-karel-programming.html//>  
+One Robotics intro to KAREL programming.
+
 
 ## Miscellaneous + forum threads
 
