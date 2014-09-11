@@ -16,3 +16,14 @@ talk to wei about:
 start using version control
 organize bookmarks document into categories
 use cooper library subscriptions to look for more papers
+
+9/10/14
+got complete R-30iA Series Controller Training Manual from wei; can't seem to
+find this one online
+note: karel the robot and karel++ are educational languages, and are
+completely separate from the proprietary KAREL language used by FANUC
+registered for FANUC customer resource center (cRc), hopefully they approve
+and follow through with "free software downloads" promised in front of
+training manual, namely the OlpcPRO software, for translating KAREL code
+need to see if our robot has ASCII upload feature
+downloaded karel reference manual from scribd
