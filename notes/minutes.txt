@@ -27,3 +27,17 @@ and follow through with "free software downloads" promised in front of
 training manual, namely the OlpcPRO software, for translating KAREL code
 need to see if our robot has ASCII upload feature
 downloaded karel reference manual from scribd
+
+9/11/14
+research what chopped fiber/other composite filaments are currently in use
+and/or available for purchase; check out what they used for that printed
+carbon fiber car chassis
+according to wei, the FANUC robot won't be ready to use until the cage is
+finished and the base is rotated 90 deg (no ETA for some reason)...also, vision camera + load cell
+might get in the way of mounting our own tooling
+PUMA 700 robot could work in the meantime as a starting point. has 0.008 in
+(0.2 mm) repeatability, so should work; will meet wei to go over PUMA
+operation when key cards work again
+stay away from UV cured resins; if mark forged can print using only heat, so
+can we
+uploaded abstract to moodle

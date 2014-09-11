@@ -74,6 +74,9 @@ American Math Society feature column article on a basic STL slicing algorithm, i
 <http://onerobotics.com/2013/12/28/introduction-to-karel-programming.html//>  
 One Robotics intro to KAREL programming.
 
+## Robot info
+<http://www.prsrobots.com/spec700.html?/>  
+Puma 700 technical specifications.
 
 ## Miscellaneous + forum threads
 
