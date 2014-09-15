@@ -40,3 +40,10 @@ operation when key cards work again
 stay away from UV cured resins; if mark forged can print using only heat, so
 can we
 uploaded abstract to moodle
+
+9/15/14
+generate some possible use cases, for context 
+make a map of where 3D printing is now, who's working on what - use to get a
+broader vision, then narrow down 
+what's important? 
+what else can we do with 1 or more robot arms?
