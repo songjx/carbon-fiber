@@ -47,3 +47,30 @@ make a map of where 3D printing is now, who's working on what - use to get a
 broader vision, then narrow down 
 what's important? 
 what else can we do with 1 or more robot arms?
+
+9/17/14
+key characteristics & "geometric tailoring" - needs to be factored into
+DFM/manufacturing process
+what KCs (key characteristics) are CF-reinforced polymer composite users
+looking for? how can directed/curved layer fiber 3D printing achieve those KCs
+in ways that traditional layup techniques can't?
+"functional requirements" of parts - need to quantify
+find/generate use cases to discuss
+ex) speed up layup, less labor, make new part geometries possible, improve
+existing CF parts design
+need to see current design philosophies/best practices for carbon fiber layup;
+see labor, setup, time, money requirements
+get a feel for all current layup techniques (manual, machine; curing methods)
+*consider the effects of internal voids (weak spots!) in CF parts
+
+9/23/14
+control electronics - could build own board - only need one pololu 
+talk with wei:
+can buy ceiling track slider, or ask buildings&grounds or maintenance
+do we have a durometer?
+see what aluminum bar stock is available in the shops
+online ordering: send a PO if possible (no sales tax)
+reimbursements: today's order is fine for now, for all the important parts
+our robot is definitely the PUMA 762
+
+

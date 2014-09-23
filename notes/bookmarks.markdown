@@ -55,6 +55,24 @@ Slic3r 3D printing software (stl -> gcode); open source.
 <http://johnmacfarlane.net/pandoc/index.html>  
 Pandoc: convert between different markup formats like HTML, Markdown, LaTeX, docx, etc.
 
+<https://github.com/alexrj/Slic3r>  
+Slic3r Github repo.
+
+<http://replicat.org/>  
+ReplicatorG: open source 3D printer driver program; controls printer hardware (motors, heaters, etc); used for MakerBots, RepRaps, and more; open source. 
+
+<https://github.com/makerbot/ReplicatorG>  
+ReplicatorG Github repo.
+
+<https://github.com/MaskedRetriever/SuperSkein/>  
+SuperSkein Github repo: open source software (stl -> gcode)
+
+<http://software.ultimaker.com/> 
+Cura: open source slicer software (stl -> gcode)
+
+<https://github.com/daid/Cura>  
+Cura Github repo (development version)_
+
 ## Printers
 
 <https://markforged.com>  
