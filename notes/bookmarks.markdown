@@ -71,7 +71,17 @@ SuperSkein Github repo: open source software (stl -> gcode)
 Cura: open source slicer software (stl -> gcode)
 
 <https://github.com/daid/Cura>  
-Cura Github repo (development version)_
+Cura Github repo (development version)
+
+## RepRap 
+
+<http://reprap.org/wiki/Gen7_Board-AVR_1.5>  
+Generation 7 electronics: AVR-1.5 release page with parts list, manufacturing instructions, part choice guides, etc.
+
+<https://github.com/Traumflug/Generation_7_Electronics>  
+Generation 7 electronics Github repo: schematics, datasheets, etc.
+
+
 
 ## Printers
 
