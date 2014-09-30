@@ -73,4 +73,14 @@ online ordering: send a PO if possible (no sales tax)
 reimbursements: today's order is fine for now, for all the important parts
 our robot is definitely the PUMA 762
 
+9/25/14
+see what nozzles we can have for the PUMA air
+air tube: OD 5/16"
+fitting: 1/2"
+
+9/30/14
+need to talk to wootton to get a refresher on stress
+need to do more research on stresses in structural components
+need to do more research on design and testing of composite parts
+need to look into how we'll use ansys for analysis/optimization
 
