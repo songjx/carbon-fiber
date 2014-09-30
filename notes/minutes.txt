@@ -83,4 +83,7 @@ need to talk to wootton to get a refresher on stress
 need to do more research on stresses in structural components
 need to do more research on design and testing of composite parts
 need to look into how we'll use ansys for analysis/optimization
+minutes with wootton:
+find some existing parts that can't be 3D printed normally, and 3D print those
+check the manufacturing textbook for analysis of composites
 
