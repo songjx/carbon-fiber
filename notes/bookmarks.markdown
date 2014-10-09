@@ -73,6 +73,9 @@ Cura: open source slicer software (stl -> gcode)
 <https://github.com/daid/Cura>  
 Cura Github repo (development version)
 
+<https://code.google.com/p/val-parser/>  
+val-parser: VAL Robot Programming Environment
+
 ## RepRap 
 
 <http://reprap.org/wiki/Gen7_Board-AVR_1.5>  
@@ -132,6 +135,9 @@ How carbon fiber is made.
 ## Robot info
 <http://www.prsrobots.com/spec700.html?>  
 Puma 700 technical specifications.
+
+<http://www.cs.cmu.edu/~deadslug/puma.html>  
+Richard Voyles' PUMA page.
 
 ## Miscellaneous + forum threads
 

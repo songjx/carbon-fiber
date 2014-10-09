@@ -87,3 +87,11 @@ minutes with wootton:
 find some existing parts that can't be 3D printed normally, and 3D print those
 check the manufacturing textbook for analysis of composites
 
+10/7/14
+successfully pultruded some derpy CF/ABS using pitre's 3doodler
+
+10/8/14
+did some tensile tests on 3doodled plain ABS and CF/ABS
+will get PUMA training tomorrow
+
+
