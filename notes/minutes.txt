@@ -92,6 +92,8 @@ successfully pultruded some derpy CF/ABS using pitre's 3doodler
 
 10/8/14
 did some tensile tests on 3doodled plain ABS and CF/ABS
+tried to melt ABS on the hot plate. failed miserably - not enough contact area
+with heat source
 will get PUMA training tomorrow
 
 

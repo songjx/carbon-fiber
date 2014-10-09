@@ -139,6 +139,13 @@ Puma 700 technical specifications.
 <http://www.cs.cmu.edu/~deadslug/puma.html>  
 Richard Voyles' PUMA page.
 
+## Plastics
+<http://www.ptonline.com/columns/the-importance-of-melt-mold-temperature>  
+The Importance of Melt & Mold Temperature: the effect of melt and mold temperatures on the mechanical properties of injection molded parts.
+
+<http://www.instructables.com/id/Build-your-own-3d-printing-filament-factory-Filame/?ALLSTEPS>  
+DIY 3D printing filament maker for ~$150; most parts available on eBay, Amazon, etc.
+
 ## Miscellaneous + forum threads
 
 <http://www.rcgroups.com/forums/showthread.php?t=1061083>  
