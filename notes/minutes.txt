@@ -96,4 +96,14 @@ tried to melt ABS on the hot plate. failed miserably - not enough contact area
 with heat source
 will get PUMA training tomorrow
 
+10/13/14
+made some ABS/acetone slurry, hand dipped fiber. super chunky.
+
+10/14/14
+made some thinner ABS/acetone slurry, dipped fiber using aluminum armature wire guide. pretty smooth results - optimistic about wet-out completion. 
+need to determine properties of new fiber and document them
+need to refine process
+need to see if this stuff will extrude at all
+
+
 
