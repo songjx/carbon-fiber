@@ -1,3 +1,4 @@
+*.pdf
 *.aux
 *.log
 *.lot
@@ -5,3 +6,6 @@
 *.gz
 *.toc
 *.out
+*~
+*.swp
+*.swo
