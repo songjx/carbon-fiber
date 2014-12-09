@@ -35,7 +35,7 @@ Tensile tests were performed on the filament samples that were produced using th
 
 \subsection{Mechanical Testing Results}
 
-The tensile tests performed on the filament samples provide insight into some of their basic mechanical properties. A representative rest result chart is provided in Figure~\ref{fig:instron-sample}. 
+The tensile tests performed on the filament samples provide insight into some of their basic mechanical properties. A representative tensile test data chart is provided in Figure~\ref{fig:instron-sample}. The CFRP samples showed fairly linear behavior before failing. Table~\ref{tab:test-results} compares the estimated ultimate tensile strength, stiffness, and density of two filament samples with those of ABS, carbon fiber, and aluminum 6061. The properties of aluminum were included for comparison because CFRP materials are often used to replace aluminum parts. Because it was difficult to consistently clamp the test samples without slipping once the test began, these are only very preliminary results. The results are also affected by inconsistencies in the filament samples themselves. Once the filament production method and test setup are further refined for consistency, further tests will be done to better characterize the properties of the filament. For now, however, the results are promising: both the pultruded and dipped filament samples are lighter and have a higher ultimate tensile strength than aluminum 6061, although they are not as stiff.
 
 \begin{figure}[htp]
     \centering
@@ -44,5 +44,15 @@ The tensile tests performed on the filament samples provide insight into some of
     \label{fig:instron-sample}
 \end{figure}
 
-
-
+\begin{table}[h]
+    \begin{tabular}{lcccc}
+        Material           & Ultimate Tensile Strength (MPa)   & Stiffness (GPa)    & Density ($ kg/m^{3} $)  \\ \hline
+        ABS                & 53                                & 2.3                & 1040 \\
+        Carbon Fiber       & 3750                              & 231                & 1750 \\
+        Aluminum 6061      & 310                               & 68.9               & 2700 \\
+        Pultruded Filament & 313                               & 13.4               & 1354 \\ 
+        Dipped Filament    & 690                               & 19.6               & 1567 \\
+    \end{tabular}
+    \caption{Preliminary CFRP filament test results, as compared to its constituents and to aluminum.}
+    \label{tab:test-results}
+\end{table}
