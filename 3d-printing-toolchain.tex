@@ -4,26 +4,39 @@
 
 \indent
 
+The extruder is the mechanism responsible for depositing the filament in a 3D printing system. Generally, this mechanism includes a motor that drives a gripping mechanism, which reels in and pushes the filament into a heated nozzle. The nozzle heats the filament into a \emph{mushy} state and lays the filament on the printing bed or on an already printed layer to create the part.\\
+
+In the case of our carbon fiber 3D printer, the extruder is required to mount to the robot arm, be compact\footnote{The compact size is required for two reasons. First, to ensure that induced torque on the robot arm joints and gripper remain within safe operating conditions. Second, to readily permit the nozzle to deposit material when not perpendicular to the build platform, which will be required for printing curved layers.}, and accept filaments of a variety of sizes (likely ranging in diameter from 1.75 mm to 3 mm).  
+
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.8\textwidth]{./figures/extruder-iso}
+\includegraphics[width=0.5\textwidth]{./figures/extruder-iso}
 \caption{An isometric render of the final extruder design.}
 \label{fig:flowchart}
 \end{figure}
 
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.8\textwidth]{./figures/extruder-top}
+\includegraphics[width=0.5\textwidth]{./figures/extruder-iso}
+\caption{An isometric render of the final extruder design.}
+\label{fig:flowchart}
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.5\textwidth]{./figures/extruder-top}
 \caption{A front view render of the final extruder design.}
 \label{fig:flowchart}
 \end{figure}
 
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.8\textwidth]{./figures/extruder-front}
+\includegraphics[width=0.5\textwidth]{./figures/extruder-front}
 \caption{A top view render of the final extruder design.}
 \label{fig:flowchart}
 \end{figure}
+
+\clearpage
 
 \subsection{Control Electronics}
 \indent 
