@@ -4,6 +4,45 @@ In order to print the CFRP material, the carbon fiber and resin will be combined
 
 \subsection{Production Methods}
 
-Two production methocs
+Two production methods have been explored so far in the development of the CFRP filament. The first is pultrusion, a fabrication method widely used to manufacture fiber-reinforced structural members. A 3Doodler handheld 3D printing device was employed in pultrusion tests. The 3Doodler's feed motor was disabled, and then a bundle of carbon fiber and an ABS rod were simultaneously fed through the 3Doodler's heater and nozzle. The combined materials were manually drawn through from the exit end of the nozzle. This process is shown in Figure~\ref{fig:pultrusion-vid}. In the resulting filament, the carbon fiber bundle and the ABS adhered together well. However, due to the high viscosity of the heated ABS, most of the individual carbon fibers were not in contact with the ABS. This effect is visible in Figure~\ref{fig:pultruded-scope}.
 
-\subsection{Mechanical Testing}
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{./figures/pultrusion-vid}
+    \caption{The experimental pultrusion setup, using the 3Doodler.}
+    \label{fig:pultrusion-vid}
+\end{figure}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./figures/pultruded-scope}
+    \caption{Pultruded filament sample, magnified 10x under a microscope.}
+    \label{fig:pultruded-scope}
+\end{figure}
+
+Good fiber wet-out is critical to the performance of fiber composites, so another filament production method was explored. In the new procedure, achieving complete wet-out was prioritized. ABS plastic was dissolved in acetone to make a thin slurry. A fiber guide was fabricated to guide the carbon fiber in and out of the slurry. Carbon fiber bundles were then drawn through the fiber guide and allowed to dry. The process setup is shown in Figure~\ref{fig:dipping-vid}. As the acetone evaporated from the slurry, a small amount of ABS was left on the carbon fibers. The resulting filament showed very good wet-out. A pultruded sample and a dipped sample are shown side-by-side in Figure~\ref{fig:two-samples}.
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./figures/FilamentSample}
+    \caption{A pultruded filament sample (top) and a dipped filament sample (bottom), labeled with sample numbers.}
+    \label{fig:two-samples}
+\end{figure}
+
+\subsection{Mechanical Testing Setup}
+
+Tensile tests were performed on the filament samples that were produced using the pultrusion and dipping methods. An Instron mechanical testing machine was used for these tests. Short lengths of filament (roughly 2 in) were cut from larger samples for testing. Due to the small, slippery,  and flexible nature of the filament samples, the regular serrated jaw inserts of the Instron tensile test jaws could not be used alone to secure the samples. Instead of clamping the samples directly in the jaws, the samples were securely mounted to aperture cards using melted ABS. The ends of the card were folded over the filament. Once clamped in the serrated jaws, the cardboard protected the filament from the jaws and held it securely in place. The card also assisted in aligning the filament with the jaws. Once clamped, the portion of the card was cut with scissors, and the test was started.
+
+\subsection{Mechanical Testing Results}
+
+The tensile tests performed on the filament samples provide insight into some of their basic mechanical properties. A representative rest result chart is provided in Figure~\ref{fig:instron-sample}. 
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./figures/009T1-instron-data}
+    \caption{Sample tensile test data for a slurry-dipped filament sample.}
+    \label{fig:instron-sample}
+\end{figure}
+
+
+
