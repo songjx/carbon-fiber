@@ -1,0 +1,17 @@
+\section{Fiber Orientation Optimization}
+
+\indent
+
+CFRPs exhibit maximum strength when loads align appropriately along the fiber. Therefore, fiber orientation within parts is critical. Finite element analysis software will be utilized to determine optimal fiber orientation and printing tool paths will be generated from this data.
+
+\subsection{Finite Element Analysis}
+
+\indent
+
+\emph{ANSYS} finite element software will be used to determine fiber orientation within printed parts. We will utilize the \emph{Composite PrepPost} package, which is specifically designed to assess the strength of composite structures. The package utilizes shell elements that contain matrix and fiber material properties. The software also contains multiple laminate failure criteria and can perform optimization loops to determine the strongest configuration of fiber angles. For instance, a tube can discretized into a number of shell elements, assigned a number of layers, given isotropic matrix material properties and orthotropic fiber material properties, and iterated through different fiber angles to calculate stress and deformation gradients across the entire part (at all angles or at only the strongest angle). Therefore, once we determine the specific part(s) we wish to print using our curved layer carbon fiber technique the necessary fiber orientation will be found using this technique.\footnote{Dr. Wootton has advised us that many computation analyses usually overshoot experimental strength results. However, experimental and theoretical results will typically agree in trends and the computational model will sufficiently locate the weakest area(s) of the geometry.}\\
+
+\subsection{Toolpath Generation}
+
+\indent
+
+sample text
