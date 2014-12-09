@@ -60,6 +60,9 @@ The extruder will be machined with aluminum to provide rigidity. Many 3D printer
 
 \clearpage
 
+
+
+
 \subsection{Control Electronics}
 \indent 
 
@@ -68,6 +71,13 @@ The extruder is controlled by a Megatronics control board, which was developed f
 When used in RepRap printers, the Megatronics board is typically used with one of several open source firmwares that are also associated with the RepRap project. Because these firmwares were designed with Cartesian desktop FDM printers in mind, they work well with the Megatronics board. The chosen firmware is uploaded to the board using a USB cable. For the FANUC-mounted extruder, a suitable firmware will be chosen and modified to work with the FANUC robot.
 
 The firmware will be modified to control only the components present on the FANUC-mounted extruder. The firmware's timing functions must be modified as well. Normally, the firmware calculates its own filament feed rates and motor speeds. Because the FANUC controller is much less flexible than the RepRap firmware, the firmware will be modified to monitor the FANUC robot speed and position, and act accordingly. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\textwidth]{./figures/electronics-board}
+\caption{A photo of the Megatronics Control Board.}
+\label{fig:extruder drawing}
+\end{figure}
 
 \subsection{Slicing Algorithm and Layer Generation}
 
