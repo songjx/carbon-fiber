@@ -1,0 +1,133 @@
+\title{Development of a Curved Layer Carbon Fiber 3D Printer}
+\author{Jackie Song, Peter Ascoli}
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+%\usepackage[autolinebreaks]{mcode}
+\usepackage[section]{placeins}
+\usepackage{gensymb}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Peter Ascoli, Jackie Song}
+\chead{ME163: Senior Project}
+\rhead{\rightmark}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\usepackage[hidelinks,colorlinks=false]{hyperref}
+\usepackage[all]{hypcap}
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+
+%REPORT REQUIREMENTS:
+%
+%1) Applies exceptional analytical skills and synthesis of knowledge at system design level
+%2) Integrates concepts from different disciplines and recognizes applicability of concepts to design problem
+%3) Clearly articulates design criteria and constraints
+%4) Factors all constituents that contribute to design criteria and constraints and recognizes how design decisions impact design criteria and constraints
+%5) Formulates clear problem statement
+%6) Articulates problem solving process and outlines compelling strategy for finding quality solution
+%7) Concise, well-organized and well-written
+%8) Professional quality technical content
+%9) Performs relevant and reputable literature review and demonstrates awareness of state-of-the-art
+
+\begin{document}
+
+%\maketitle
+
+%---------------------------------------------------------
+\input{title-page.tex}
+
+\input{abstract.tex}
+
+\tableofcontents
+\thispagestyle{plain}
+\clearpage
+
+\listoffigures
+\listoftables
+
+%----------------------------------------------------------
+\input{nomenclature.tex}
+
+\clearpage
+
+%----------------------------------------------------------
+\input{introduction.tex}
+
+%problem definition, background research, our project goal(s)
+
+\clearpage
+
+%----------------------------------------------------------
+\input{3d-printing-toolchain.tex}
+
+%extruder, control electronics, slicing algorithm & layer generation
+
+\clearpage
+
+%----------------------------------------------------------
+\input{6dof-manipulator.tex}
+
+%robots
+
+\clearpage
+
+%----------------------------------------------------------
+\input{carbon-fiber-filament.tex}
+
+%research and methods
+
+\clearpage
+
+%----------------------------------------------------------
+\input{material-analysis.tex}
+
+% experimental stuff we haven't gotten to yet
+
+\clearpage
+
+%----------------------------------------------------------
+\input{fiber-orientation-optimization.tex}
+
+%ansys and whatnot
+
+\clearpage
+
+%-----------------------------------------------------------
+%\input{next-steps.tex}
+%
+%\clearpage
+
+%-----------------------------------------------------------
+\input{conclusion.tex}
+
+\clearpage
+
+%----------------------------------------------------------
+\input{acknowledgements.tex}
+
+\clearpage
+
+%----------------------------------------------------------
+%\section{Bibliography}
+
+\bibliographystyle{plain}
+\bibliography{pj-sem1}
+
+% how do you bibtex across multiple input files?
+
+\clearpage
+
+%----------------------------------------------------------
+%\input{appendix-1.tex}
+%
+%\clearpage
+
+%----------------------------------------------------------
+%\input{appendix-1.tex}
+%
+%\clearpage
+
+
+\end{document}
