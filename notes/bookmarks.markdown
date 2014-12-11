@@ -84,6 +84,8 @@ Generation 7 electronics: AVR-1.5 release page with parts list, manufacturing in
 <https://github.com/Traumflug/Generation_7_Electronics>  
 Generation 7 electronics Github repo: schematics, datasheets, etc.
 
+<http://reindeerflotilla.wordpress.com/2013/04/17/wiring-oem-in-chassis-smpss-for-3d-printers/>  
+Wiring a power supply for a RepRap.
 
 
 ## Printers
