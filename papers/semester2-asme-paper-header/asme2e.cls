@@ -1,12 +1,19 @@
 % ASME DOCUMENT CLASS - asme2e.cls
-% 	for LaTeX version 2e - 2/14/01
+% 	for LaTeX version 2e - 2/14/10
 %
 % WARNING: This is an unauthorized class file. It has not been thoroughly
-% tested so it probably still has bugs. I'll do my best to fix them when 
+% tested so it probably still has bugs. We will do our best to fix them when 
 % found.
 %
 % ---------------------------------------------------------------------------
 %   filename:      asme2e.cls
+%   version 1.6, Jan 11, 2010. 
+%        (1) Greek letters in math mode are italicized.
+%        (2) Figure captions are in uppercase bold sans serif font of 9 points.
+%        (3) The defined commands \hour \minute conflict with the commands 
+%              \hour and minute in the approved package SIunits.  
+%              They were changed to \thour and \tminute.
+%             --- Marc LaViolette <laviolette-m@rmc.ca>
 %   version 1.4, May 12, 2005. 
 %        (1) Modified asme2e.cls to support pdflatex  
 %        (2) Modified asme2e.cls to support multiple lines in conference name.
@@ -42,7 +49,7 @@
 
 \RequirePackage{ifthen}
 \RequirePackage{times}      % Loads the Times-Roman Fonts
-\RequirePackage{mathptm}    % Loads the Times-Roman Math Fonts
+\RequirePackage{mathptmx}    % Loads the Times-Roman Math Fonts
 \RequirePackage{ifpdf}      % Needed to pick between latex and pdflatex
 
 \newboolean{@titlepage}
@@ -75,8 +82,8 @@
   January\or February\or March\or April\or May\or June\or
   July\or August\or September\or October\or November\or December\fi
   \space\number\day, \number\year}
-\newcommand\currenttime{\minute\time\hour\minute\divide\hour60
-\the\hour:\multiply\hour60\advance\minute-\hour\the\minute}
+\newcommand\currenttime{\tminute\time\thour\tminute\divide\thour60
+\the\thour:\multiply\thour60\advance\tminute-\thour\the\tminute}
 
 
 
@@ -308,10 +315,7 @@
 \DeclareFixedFont{\twlsfb}{OT1}{phv}{b}{n}{12}
 \DeclareFixedFont{\tensfb}{OT1}{phv}{b}{n}{10}
 \DeclareFixedFont{\tensf}{OT1}{phv}{m}{n}{10}
-\DeclareFixedFont{\phvtf}{OT1}{phv}{b}{n}{18}
 
-
-\DeclareOldFontCommand{\rmbf}{\normalfont\rmfamily\bf}{\mathrm}
 \DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
 \DeclareOldFontCommand{\sf}{\normalfont\sffamily}{\mathsf}
 \DeclareOldFontCommand{\tt}{\normalfont\ttfamily}{\mathtt}
@@ -334,36 +338,29 @@
 
 \setlength{\paperheight}{11in}
 \setlength{\paperwidth}{8.5in}
-%\setlength{\oddsidemargin}{48pt}
-%\setlength{\evensidemargin}{48pt}
-\setlength{\oddsidemargin}{0.925in}
-\setlength{\evensidemargin}{0.925in}
+\setlength{\oddsidemargin}{48pt}
+\setlength{\evensidemargin}{48pt}
 % Added by Matt Campbell to make compatible with pdflatex 3/8/2005
 \ifpdf%
-   %\setlength{\topmargin}{1.3in}% use 1.3in top margin for pdflatex
-   \setlength{\topmargin}{0.8in}% use 1.3in top margin for pdflatex
+   \setlength{\topmargin}{1.3in}% use 1.3in top margin for pdflatex
 \else
-   \setlength{\topmargin}{1.5in}% use 2.0in top marging for latex - same as original
-   %\setlength{\topmargin}{2.0in}% use 2.0in top marging for latex - same as original
+   \setlength{\topmargin}{2.0in}% use 2.0in top marging for latex - same as original
 \fi
 %\setlength{\topmargin}{2.0in}% original line 
 % End pdflatex section
 \setlength{\marginparwidth}{0pt}
 \setlength{\marginparsep}{11pt}
 \setlength{\marginparpush}{5pt}
-%\setlength{\columnsep}{.375in}
-\setlength{\columnsep}{.17in}
+\setlength{\columnsep}{.375in}
 \setlength{\columnseprule}{0pt}
 \setlength{\headheight}{10pt}
 \setlength{\headsep}{18pt}
 \setlength{\topskip}{10pt}
 \setlength{\footskip}{24pt}
-%\setlength{\textheight}{9.00in}
-\setlength{\textheight}{10.00in}
+\setlength{\textheight}{9.00in}
 \advance\textheight by -\headheight
 \advance\textheight by -\headsep
-\setlength{\textwidth}{6.85in}
-%\setlength{\textwidth}{7.5in}
+\setlength{\textwidth}{7.5in}
 \setlength{\footnotesep}{6.65pt}
 \setlength{\skip\footins}{9pt plus4pt minus 2pt}
 \setlength{\floatsep}{18pt plus2pt minus2pt}
@@ -507,7 +504,7 @@
       \else
         \@restonecolfalse\newpage
       \fi
-      \thispagestyle{fancy}%
+      \thispagestyle{empty}%
       \if@compatibility
         \setcounter{page}{0}
       \else
@@ -580,20 +577,15 @@
 \newcommand{\section}{\@startsection {section}{1}{\z@}
                         {24pt plus3pt minus2pt}
                         {0.0001pt}
-                        %{\tensfb}}
-                        {\rmbf}}
+                        {\tensfb}}
 \newcommand{\subsection}{\@startsection {subsection}{2}{\z@}
                            {18pt plus2pt minus1pt}
                            {0.0001pt}
-                           %{\tensfb}}
-                           {\rmbf}}
-%\newcommand{\subsubsection}{\@startsection {subsubsection}{3}{\parindent}
-\newcommand{\subsubsection}{\@startsection {subsubsection}{3}{\z@}
+                           {\tensfb}}
+\newcommand{\subsubsection}{\@startsection {subsubsection}{3}{\parindent}
                            {18pt plus2pt minus1pt}
-                           {0.0001pt}
-                           %{-1em}
-                           %{\tensfb}}
-                           {\rmbf}}
+                           {-1em}
+                           {\tensfb}}
 \newcommand{\paragraph}{\@startsection {paragraph}{4}{\z@}
                           {12pt plus2pt minus1pt}
                           {-1em}
@@ -682,13 +674,11 @@
 \renewcommand{\dbltopfraction}{.9}
 \renewcommand{\dblfloatpagefraction}{.91}         
 
-%\newcommand\figurename{Figure}
-\newcommand\figurename{Fig.}
+\newcommand\figurename{Figure}
 \newcommand\tablename{Table}
 \newcommand\partname{Part}
 \newcommand\appendixname{APPENDIX}
-\newcommand\refname{References}
-%\newcommand\refname{REFERENCES}
+\newcommand\refname{REFERENCES}
 \newcommand\contentsname{CONTENTS}
 
 
@@ -721,7 +711,7 @@
 \def\fps@figure{tbp}
 \def\ftype@figure{1}
 \def\ext@figure{lof}
-\def\fnum@figure{\figurename~\thefigure}
+\def\fnum@figure{\small\textbf{\textsf{\MakeUppercase{\figurename~\thefigure}}}}
 \newenvironment{figure}
                {\@float{figure}}
                {\end@float}
@@ -733,7 +723,7 @@
 \def\fps@table{tbp}
 \def\ftype@table{2}
 \def\ext@table{lot}
-\def\fnum@table{\tablename~\thetable}
+\def\fnum@table{\small\textbf{\textsf{\MakeUppercase{\tablename~\thetable}}}}
 \newenvironment{table}{%
             \small
             \renewcommand{\arraystretch}{1.5}
@@ -820,8 +810,7 @@
   \gdef\@thanks{}\gdef\@author{}\gdef\@title{}}
 \fi
  
-%\renewcommand\title[1]{\gdef\@title{\uppercase{#1}}}
-\renewcommand\title[1]{\gdef\@title{#1}}
+\renewcommand\title[1]{\gdef\@title{\uppercase{#1}}}
 
 \if@cleanhead
 \def\@maketitle{%
@@ -842,22 +831,20 @@
 \else
 
 \def\@maketitle{%
-  %\newpage
+  \newpage
   \null\vspace*{-26pt}             % Took out ASMElogo provision
    \vbox{\hbox to \textwidth{\begin{tabular}{@{}c@{\hskip3pc}}
    \hbox to 46pt{\vbox to 46pt{\vss\hsize46pt\vss}}\end{tabular}\hss
   \vbox{\hsize37pc\scriptsize\sf\vskip\baselineskip%
   \bannerfnt\begin{flushright}% added flushright to properly wrap long conference names
-  %\hfill Proceedings of \@confshortname\par
-  %\hfill \@conffullname\par
+  \hfill ME 164 Capstone Senior ME Design \\[10pt] The Cooper Union Spring 2015\par
+  %\hfill \@confshortname\par
   %\hfill \@confmonth\ \@confdate, \@confyear, \@confcity, \@confcountry
 
-  %\vskip.5in
-  \hfill {\pnumfnt\@papernum}\end{flushright}}
+  \end{flushright}}
   \hskip1pc}}
-  %\vskip.15in%.25in original value w/out flushright
-  %\vskip .25pc{\large\twlsfb
-  \vskip .5pc{\Large\phvtf
+  \vskip.15in%.25in original value w/out flushright
+  \vskip .25pc{\large\twlsfb
                \begin{center}\leftskip.5in plus1fill\rightskip\leftskip
                \@title\par\end{center}}
   \vskip2pc{\begin{center}\@author\par\end{center}}\vskip12pt}
@@ -875,11 +862,8 @@
 \else
   \newenvironment{abstract}{%
      \if@twocolumn
-        %\normalsize\par\addvspace{12pt}\noindent
-        %{\tensfb ABSTRACT}\par
-        \normalsize\noindent
-        %{\tensfb Abstract}\\
-        \noindent
+        \normalsize\par\addvspace{12pt}\noindent
+        {\tensfb ABSTRACT}\par
      \else
         \begin{center}
           {{\tensfb ABSTRACT}\vspace{-.5em}\vspace{\z@}}
@@ -1212,13 +1196,12 @@
    \newcommand\entry[2]{%
        \setbox\tempbox\hbox{##1.\quad}
        \hangindent\wd\tempbox\noindent{##1}\quad\ignorespaces##2\par}
-       %\section*{NOMENCLATURE}}{\par\addvspace{12pt}}
-       \section*{Nomenclature}}{\par\addvspace{12pt}}
+       \section*{NOMENCLATURE}}{\par\addvspace{12pt}}
 
 % Acknowledgement environment
 
 \newenvironment{acknowledgment}{%
-   \section*{Acknowledgements}}{\par\addvspace{12pt}}
+   \section*{ACKNOWLEDGMENT}}{\par\addvspace{12pt}}
 
 % The following are the new theorem definitions
 
@@ -1302,10 +1285,10 @@
 \else
  \def\ps@myheadings{%
      \let\@mkboth\@gobbletwo
-     %\def\@oddfoot{\hskip1.55in\hfil\thepage\hfil Copyright\ \ \copyright\ \@confyear%
-    %~by ASME}%
-     %\def\@evenfoot{\hskip1.55in\hfil\thepage\hfil Copyright\ \ \copyright\ \@confyear%
-    %~by ASME}%
+     \def\@oddfoot{\hskip1.55in\hfil\thepage\hfil Copyright\ \ \copyright\ 2015
+    by The Cooper Union}%
+     \def\@evenfoot{\hskip1.55in\hfil\thepage\hfil Copyright\ \ \copyright\ \@confyear%
+    ~by The Cooper Union}%
 
     \let\@oddhead\@empty
     \let\@evenhead\@empty
@@ -1316,8 +1299,8 @@
      \def\@oddhead{$\smash{\raise72pt\hbox%
                   {}}$\hfill}%
                   %{\scriptsize\today\qquad\currenttime}}$\hfill}%
-     %\def\@oddfoot{\reset@font\rm\hskip1.55in\hfil\thepage%
-     %\hfil Copyright\ \ \copyright\ \@confyear\ by ASME}%
+     \def\@oddfoot{\reset@font\rm\hskip1.55in\hfil\thepage%
+     \hfil Copyright\ \ \copyright\ 2015 by The Cooper Union}%
      \let\@evenhead\@oddhead\let\@evenfoot\@oddfoot}
 
 \fi
@@ -1350,9 +1333,9 @@
 %     \hfil Copyright\ \ \copyright\ \confyear\ by ASME}%
 %     \let\@evenhead\@oddhead\let\@evenfoot\@oddfoot}
 
-\newcount\minute\newcount\hour
-\def\currenttime{\minute\time\hour\minute\divide\hour60
-\the\hour:\multiply\hour60\advance\minute-\hour\the\minute}
+\newcount\tminute\newcount\thour
+\def\currenttime{t\minute\time\thour\tminute\divide\thour60
+\the\thour:\multiply\thour60\advance\tminute-\thour\the\tminute}
 
 \markboth{}{}
 \ps@myheadings
