@@ -1285,10 +1285,10 @@
 \else
  \def\ps@myheadings{%
      \let\@mkboth\@gobbletwo
-     \def\@oddfoot{\hskip1.55in\hfil\thepage\hfil Copyright\ \ \copyright\ \@confyear%
-    ~by ASME}%
+     \def\@oddfoot{\hskip1.55in\hfil\thepage\hfil Copyright\ \ \copyright\ 2015
+    by The Cooper Union}%
      \def\@evenfoot{\hskip1.55in\hfil\thepage\hfil Copyright\ \ \copyright\ \@confyear%
-    ~by ASME}%
+    ~by The Cooper Union}%
 
     \let\@oddhead\@empty
     \let\@evenhead\@empty
@@ -1300,7 +1300,7 @@
                   {}}$\hfill}%
                   %{\scriptsize\today\qquad\currenttime}}$\hfill}%
      \def\@oddfoot{\reset@font\rm\hskip1.55in\hfil\thepage%
-     \hfil Copyright\ \ \copyright\ \@confyear\ by ASME}%
+     \hfil Copyright\ \ \copyright\ 2015 by The Cooper Union}%
      \let\@evenhead\@oddhead\let\@evenfoot\@oddfoot}
 
 \fi
