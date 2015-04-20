@@ -507,7 +507,7 @@
       \else
         \@restonecolfalse\newpage
       \fi
-      \thispagestyle{empty}%
+      \thispagestyle{fancy}%
       \if@compatibility
         \setcounter{page}{0}
       \else
@@ -842,7 +842,7 @@
 \else
 
 \def\@maketitle{%
-  \newpage
+  %\newpage
   \null\vspace*{-26pt}             % Took out ASMElogo provision
    \vbox{\hbox to \textwidth{\begin{tabular}{@{}c@{\hskip3pc}}
    \hbox to 46pt{\vbox to 46pt{\vss\hsize46pt\vss}}\end{tabular}\hss
