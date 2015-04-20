@@ -1,4 +1,3 @@
-*.pdf
 *.aux
 *.log
 *.lot
@@ -18,3 +17,6 @@ photos
 posters
 videos
 library
+papers/semester1-paper/pj-senior-project-semester1-report.pdf
+papers/semester2-final-report/pj-senior-project-semester2-report.pdf
+
