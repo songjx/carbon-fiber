@@ -1,0 +1,34 @@
+IO cabinet
+    explanation
+    manufacturing drawings
+    assembly drawings
+    BOM
+extruder
+    explanation
+    manufacturing drawings
+    assembly drawings
+    BOM
+jameco power supply
+    manufacturing drawings
+    assembly drawings
+    BOM
+megatronics mount
+    manufacturing drawings
+    assembly drawings
+    BOM
+datasheets
+    megatronics
+    CERT brochure
+    jameco power supply
+    LR Mate 200iC spec sheet
+    thornel CF tow
+    42BY...stepper motor
+    400n...gate switch
+    MPG...3rd party pneumatic gripper
+manuals
+    IO Unit - Model A ...
+    R30iA Mate Controller Alarm Code List
+    R-30iA Mate Controller Maintenance Manual
+    FANUC Robot Safety Handbook
+    R-30iA Mate Controller LR Handling Tool Operator's Manual
+    
