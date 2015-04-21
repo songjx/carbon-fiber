@@ -1,5 +1,12 @@
-IO cabinet
+electronics overview
+    system block diagram - robot, robot controller, extruder, heater, thermistor, etc (see white board drawing)
+    schematic - extruder, megatronics, power supply, IO module, robot controller
+    general purpose of each subsystem
+IO modules & cabinet
     explanation
+        purpose
+        cite required dimensions, heat output, power requirements, etc
+        where to buy more parts (eBay, not FANUC)
     manufacturing drawings
     assembly drawings
     BOM
@@ -13,9 +20,17 @@ jameco power supply
     assembly drawings
     BOM
 megatronics mount
+    explanantion of choices
     manufacturing drawings
     assembly drawings
     BOM
+megatronics controls/programming
+    marlin firmware
+        config
+            board version
+            missing terminal screws for fan
+    pronterface (print interface i guess)
+    speed control?????
 fanuc programming
     TOOL frame setup
     USER frame setup
@@ -23,7 +38,19 @@ fanuc programming
         offset loops
         data registers
         position registers
-    position diagram from solidworks model
+    position coordinate diagram from solidworks model
+    explanation of tool orientation choice and tool offset for offsetting contour to create thickened layers properly - also choice of contour shape wrt available move commands (circular interpolation)
+    discussion of more flexible robot programming for the future - don't rely on teaching-based system for more complex toolpaths of course
+    speed output (thanks to jay strybis)
+more info
+    PJ contact info - personal websites?
+    where to find CAD, manuals, etc
+        CAD - github repos
+        manuals - talk to wei? talk to jackie?
+    link to github repos
+    link to FANUC CRC
+    where to find FANUC parts
+    git overview
 datasheets
     megatronics
     CERT brochure
@@ -39,4 +66,4 @@ manuals
     R-30iA Mate Controller Maintenance Manual
     FANUC Robot Safety Handbook
     R-30iA Mate Controller LR Handling Tool Operator's Manual
-    
+    FANUC Robot LR Mate 200iC - FANUC Robot ARC Mate 50iC Mechanical Unit Operator's Manual
