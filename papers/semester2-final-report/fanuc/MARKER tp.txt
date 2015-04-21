@@ -1,0 +1,24 @@
+1:	UFRAME_NUM=3											// set user frame to print area
+2:	UTOOL_NUM=3											// set user tool frame to appropriate end effector
+3:	R[2:Counter 2]=0											// reset layer counter
+4:	PR[10:layer frame RW]=PR[9:layer frame R]					// set layer RW (read+write) frame position register 
+5:	LBL[2]														// label 2: layer loop
+6:	R[1:Counter 1]=0											// reset contour counter
+7:	PR[6,1:marker offset r]=0										// reset contour offset
+8:	TOOL_OFFSET_CONDITION PR[6:marker offset r]			// set tool offset condition to X-layer offset
+9:	LBL[1]														// label 1: contour loop
+10:	J	P[1] 100% FINE Tool_Offset								// joint move to point 1
+11:	C	P[2] Tool_Offset											// circular interpolation thru pt 2 to pt 3
+		P[3] 250mm/sec FINE Tool_Offset
+12:	PR[6,1:marker offset r]=PR[6,1:marker offset r]+7				// increment contour offset position register
+13:	J	P[3] 100% FINE Tool_Offset								// joint (linear) move to pt 3
+14:	C	P[2] Tool_Offset											// circular interpolation thru pt 3 to pt 1
+		P[1] 250mm/sec FINE Tool_Offset
+15:	PR[6,1:marker offset r]=PR[6,1:marker offset r]+7				// increment contour offset position register
+16:	R[1:Counter 1]=R[1:Counter 1]+1								// increment contour counter
+17:	IF R[1:Counter 1]<=1,JMP LBL[1]								// if not enough contours, go to 1
+18:	PR[10,1:layer frame RW]=PR[10,1:layer frame RW]+50			// increment layer frame position register
+19: UFRAME[3]=PR[10:layer frame RW]							// set user frame to incremented layer frame
+20:	R[2:Counter 2]=R[2:Counter 2]+1								// increment layer counter
+21: IF R[2:Counter 2]<=2,JMP LBL[2]								// if not enough layers, go to 2
+[END]
