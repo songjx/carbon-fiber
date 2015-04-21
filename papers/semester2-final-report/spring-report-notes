@@ -16,6 +16,14 @@ megatronics mount
     manufacturing drawings
     assembly drawings
     BOM
+fanuc programming
+    TOOL frame setup
+    USER frame setup
+    program commands
+        offset loops
+        data registers
+        position registers
+    position diagram from solidworks model
 datasheets
     megatronics
     CERT brochure
