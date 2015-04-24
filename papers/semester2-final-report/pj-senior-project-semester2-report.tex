@@ -15,11 +15,11 @@
 \rhead{\rightmark}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
-\usepackage[hidelinks,colorlinks=false]{hyperref}
-\usepackage[all]{hypcap}
 \providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
 \usepackage{setspace}
 \usepackage{pdfpages}
+\usepackage[hidelinks,colorlinks=false]{hyperref}
+\usepackage[all]{hypcap}
 
 %REPORT REQUIREMENTS:
 %
@@ -122,6 +122,8 @@
 \clearpage
 
 %----------------------------------------------------------
+\appendix %only need this command once
+
 \input{appendix-extruder-drawings.tex}
 
 \clearpage
