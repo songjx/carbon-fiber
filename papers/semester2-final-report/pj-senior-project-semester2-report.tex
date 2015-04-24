@@ -3,6 +3,7 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
 \usepackage[pdftex]{graphicx}
+\usepackage{subcaption} %provides subfigure environment
 \usepackage{epstopdf}
 %\usepackage[autolinebreaks]{mcode}
 \usepackage[section]{placeins}
@@ -122,13 +123,11 @@
 \clearpage
 
 %----------------------------------------------------------
-%\section{Bibliography}
-
+% Bibliography
+\phantomsection % correct page number of References in toc
+\addcontentsline{toc}{section}{References} % add References to toc
 \bibliographystyle{plain}
-\bibliography{pj-sem1}
-
-% how do you bibtex across multiple input files?
-% should work without extra effort because of how \input{} works: http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include
+\bibliography{pj-sem2}
 
 \clearpage
 

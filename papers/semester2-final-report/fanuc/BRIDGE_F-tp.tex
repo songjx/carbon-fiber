@@ -1,0 +1,44 @@
+\begin{verbatim}
+1:  UFRAME_NUM=4                             // set user frame
+2:  UTOOL_NUM=4                              // set user tool frame
+3:  R[4:layer num]=0                         // reset layer counter
+4:  PR[12:layer frame RW]=                   // set layer RW (read+write) frame 
+    PR[11:layer frame R]                        position register   
+5:  LBL[2]                                   // label 2: layer loop
+6:  R[5:contour num]=0                       // reset contour counter
+7:  PR[X,1:contour offset]=0                 // reset contour offset
+8:  TOOL_OFFSET_CONDITION                    // set tool offset condition to  
+    PR[X:contour offset]                        X-layer offset
+9:  LBL[1]                                   // label 1: contour loop
+10: J   P[1] 100% FINE Tool_Offset           // joint move to point 1
+11: J   P[2] 100% FINE Tool_Offset
+12: C   P[3] Tool_Offset                     // circular interpolation 
+        P[4] 250mm/sec FINE Tool_Offset         thru pt 3 to pt 4
+13: C   P[5] Tool_Offset
+        P[6] 250mm/sec FINE Tool_Offset
+14: C   P[7] Tool_Offset
+        P[8] 250mm/sec FINE Tool_Offset
+15: J   P[9] 100% FINE Tool_Offset
+16: PR[X,1:contour offset]=                  // increment contour offset 
+    PR[X,1:contour offset]+7                    position register
+17: J   P[9] 100% FINE Tool_Offset
+18: C   P[8] Tool_Offset
+        P[7] 250mm/sec FINE Tool_Offset
+19: C   P[6] Tool_Offset
+        P[5] 250mm/sec FINE Tool_Offset
+20: C   P[4] Tool_Offset
+        P[3] 250mm/sec FINE Tool_Offset
+21: J   P[2] 100% FINE Tool_Offset
+22: J   P[1] 100% FINE Tool_Offset
+23: PR[X,1:contour offset r]=
+    PR[X,1:contour offset]+.15
+24: R[5:contour num]=R[5:contour num]+1      // increment contour counter
+25: IF R[5:contour num]<=1,JMP LBL[1]
+26: PR[X,3:layer frame RW]=                  // increment layer frame 
+    PR[X,3:layer frame RW]+.15                  position register
+27: UFRAME[4]=PR[X:layer frame RW]           // set user frame to incremented 
+                                                layer frame
+28: R[4:layer num]=R[4:layer num]+1          // increment layer counter
+29: IF R[4:layer num]<=4,JMP LBL[2]
+[END]
+\end{verbatim}

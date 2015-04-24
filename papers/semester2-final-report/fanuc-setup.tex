@@ -1,10 +1,72 @@
 \section{FANUC setup}
+The FANUC robot system required some setup and programming before it could be used as an FDM 3D printing platform. Most of the procedures and settings described in this section can be learned fairly quickly from the lab-style tutorials in \cite{app-programming}. Full documentation is available in the controller manual \cite{lr-handling-tool}.
 
 \subsection{Frames}
-    \subsubsection{Tool frame}
-    \subsubsection{User frame}
+The FANUC robot system makes several types of coordinate systems available for defining the robot position and attitude (orientation) in space. These include some pre-defined coordinate systems  that cannot be redefined \cite[sec 3.9]{lr-handling-tool}. The user may define custom coordinate systems attached to the robot or the workspace. These coordinate systems are called "frames" in the teach pendant system.
+
+For the 3D printing application, a new tool coordinate system and user coordinate system were defined.
+
+\subsubsection{Tool frame}
+The new tool frame is attached to the custom end effector with its origin at the tip of the extruder nozzle. The tool frame was defined using the Three Point Method described in \cite[sec~3.9.1]{lr-handling-tool}. The three reference positions (points) used are pictured in Figures~\ref{fig:tool-pt-1} through \ref{fig:tool-pt-3}. An elevated piece of scrap material was used as the tool center reference point to facilitate visual alignment with the nozzle and avoid over-extending the vision camera wire while jogging the robot to the desired approach angles.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{.5\textwidth}
+        \centering
+            \includegraphics[width=.8\linewidth]{figures/tool-pt-1}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=.8\linewidth]{figures/tool-pt-1-close}
+    \end{subfigure}
+    \caption{Tool Frame reference position 1}
+    \label{fig:tool-pt-1}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{.5\textwidth}
+        \centering
+            \includegraphics[width=.8\linewidth]{figures/tool-pt-2}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=.8\linewidth]{figures/tool-pt-2-close}
+    \end{subfigure}
+    \caption{Tool Frame reference position 2}
+    \label{fig:tool-pt-2}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=.8\linewidth]{figures/tool-pt-3}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=.8\linewidth]{figures/tool-pt-3-close}
+    \end{subfigure}
+    \caption{Tool Frame reference position 3}
+    \label{fig:tool-pt-3}
+\end{figure}
+
+\subsubsection{User frame}
+The new user frame is attached to the robot workspace and is used as the coordinate system for 3D printing. The user frame was defined using the Direct List Method described in \cite[sec~3.9.2]{lr-handling-tool}. Assuming the dry-erase board surface would be used for printing, and that it lies in the x-y plane of the robot World frame\footnote{Both assumptions may become problematic if the board surface is not sufficiently flat or parallel to the x-y plane of the World frame. A new print surface and User frame may be required. Existing FDM (closed- and open-source) solutions may give clues.}, the z-coordinate of the new user frame was determined by touching the nozzle tip to the board and recording the z-coordinate of the robot in the World frame. A sheet of paper was placed under the nozzle tip to indicate a touch, shown in Figure~\ref{fig:nozzle-touch}. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/nozzle-paper}
+    \caption{User frame nozzle touch test}
+    \label{fig:nozzle-touch}
+\end{figure}
+
 \subsection{Motion commands}
-    \subsubsection{Position registers}
-    \subsubsection{Data registers}
+\input{fanuc/BRIDGE_F-tp.tex}
+
+\subsubsection{Position registers}
+\subsubsection{Data registers}
 \subsection{Toolpath point generation}
+
 \subsection{Speed output signal}
+\input{fanuc/MCH_SPD-tp.tex}
