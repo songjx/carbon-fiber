@@ -33,7 +33,9 @@ megatronics controls/programming
 
 Fanuc Programming
     TOOL frame setup
+        resulting frame settings
     USER frame setup
+        resulting frame settings
     program commands
         offset loops
         data registers
@@ -55,6 +57,7 @@ more info
     link to FANUC CRC
     where to find FANUC parts
     git overview
+    fanuc file backups
 datasheets
     megatronics
     CERT brochure
