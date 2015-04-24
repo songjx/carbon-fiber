@@ -1,7 +1,10 @@
-electronics overview
-    system block diagram - robot, robot controller, extruder, heater, thermistor, etc (see white board drawing)
-    schematic - extruder, megatronics, power supply, IO module, robot controller
-    general purpose of each subsystem
+SECTIONS
+
+Print Controls
+    high-level system overview
+        system block diagram - robot, robot controller, extruder, heater, thermistor, etc (see white board drawing)
+        general explanation of how systems work together
+    connection schematic - extruder, megatronics, power supply, IO module, robot controller
 IO modules & cabinet
     explanation
         purpose
@@ -10,12 +13,8 @@ IO modules & cabinet
     manufacturing drawings
     assembly drawings
     BOM
-extruder
-    explanation
-    manufacturing drawings
-    assembly drawings
-    BOM
 jameco power supply
+    explanation of mounting + cover
     manufacturing drawings
     assembly drawings
     BOM
@@ -31,7 +30,8 @@ megatronics controls/programming
             missing terminal screws for fan
     pronterface (print interface i guess)
     speed control?????
-fanuc programming
+
+Fanuc Programming
     TOOL frame setup
     USER frame setup
     program commands
@@ -42,6 +42,10 @@ fanuc programming
     explanation of tool orientation choice and tool offset for offsetting contour to create thickened layers properly - also choice of contour shape wrt available move commands (circular interpolation)
     discussion of more flexible robot programming for the future - don't rely on teaching-based system for more complex toolpaths of course
     speed output (thanks to jay strybis)
+
+
+APPENDICES
+
 more info
     PJ contact info - personal websites?
     where to find CAD, manuals, etc
@@ -60,6 +64,9 @@ datasheets
     42BY...stepper motor
     400n...gate switch
     MPG...3rd party pneumatic gripper
+
+CITATIONS
+
 manuals
     IO Unit - Model A ...
     R30iA Mate Controller Alarm Code List

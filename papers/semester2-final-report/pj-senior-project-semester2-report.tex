@@ -20,6 +20,7 @@
 \usepackage{pdfpages}
 \usepackage[hidelinks,colorlinks=false]{hyperref}
 \usepackage[all]{hypcap}
+\usepackage{grffile}
 
 %REPORT REQUIREMENTS:
 %
@@ -123,13 +124,18 @@
 
 %----------------------------------------------------------
 \appendix %only need this command once
-
+%----------------------------------------------------------
 \input{appendix-extruder-drawings.tex}
 
 \clearpage
 
 %----------------------------------------------------------
 \input{appendix-composite-fea.tex}
+
+\clearpage
+
+%----------------------------------------------------------
+\input{datasheets.tex}
 
 \clearpage
 
