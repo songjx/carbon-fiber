@@ -1,0 +1,28 @@
+// setup
+uframe = 4
+utool = 4
+reset layer num (0)
+reset layer frame from memory (no offset) (determined from extruder-paper-bed touch procedure)
+reset contour num (0)
+reset contour offset PR (0)
+reset contour increment direction (sign) (forward)
+set tool offset condition to contour offset 
+
+// layer loop
+label 2
+    refresh uframe with new frame PR
+    // contour loop
+    label 1
+        P 1-9 w/ tool offset
+        increment tool offset
+        P 9-1 w/ tool offset
+        increment tool offset
+        increment contour num
+    if contour num <= #, go to 1
+    // back to layer loop
+    increment layer counter
+    increment layer frame PR
+    invert contour increment direction (sign)
+    if layer num <= #, go to 2
+
+END
