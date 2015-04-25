@@ -2,7 +2,7 @@
 The FANUC robot system required some setup and programming before it could be used as an FDM 3D printing platform. Most of the procedures and settings described in this section can be learned fairly quickly from the lab-style tutorials in \cite{app-programming}. Full documentation is available in the controller manual \cite{lr-handling-tool}.
 
 \subsection{Frames}
-The FANUC robot system makes several types of coordinate systems available for defining the robot position and attitude (orientation) in space. These include some pre-defined coordinate systems  that cannot be redefined \cite[sec 3.9]{lr-handling-tool}. The user may define custom coordinate systems attached to the robot or the workspace. These coordinate systems are called "frames" in the teach pendant system.
+The FANUC robot system makes several types of coordinate systems available for defining the robot position and attitude (orientation) in space. These include some pre-defined coordinate systems  that cannot be redefined \cite[sec 3.9]{lr-handling-tool}. The user may define custom coordinate systems attached to the robot or the workspace. These coordinate systems are called "frames" in the teach pendant interface.
 
 For the 3D printing application, a new tool coordinate system and user coordinate system were defined.
 
@@ -61,8 +61,20 @@ The new user frame is attached to the robot workspace and is used as the coordin
     \label{fig:nozzle-touch}
 \end{figure}
 
-\subsection{Motion commands}
+\subsection{Programming}
+The FANUC R30iA Mate controller can be programmed from the attached Teach Pendant, pictured in Figure~\ref{teach-pendant}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/temp-cat}
+    \caption{FANUC R30iA Mate Teach Pendant}
+    \label{fig:teach-pendant}
+\end{figure}
+
+
 \input{fanuc/BRIDGE_F-tp.tex}
+
+\subsection{Motion commands}
 
 \subsubsection{Position registers}
 \subsubsection{Data registers}
