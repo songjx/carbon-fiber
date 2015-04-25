@@ -190,12 +190,12 @@ As the more promising of the two methods, dipping was explored further in attemp
 
 \begin{figure}[h!]
         \centering
-        \begin{subfigure}[b]{0.45\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \includegraphics[width=\textwidth]{./figures/filament-108-40-dip-side}
                 \caption{Length.}
                 \label{fig:filament-108-40-dip-side}
         \end{subfigure}
-        \begin{subfigure}[b]{0.45\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \includegraphics[width=\textwidth]{./figures/filament-108-40-dip-end}
                 \caption{Cross section.}
                 \label{fig:filament-108-40-dip-end}
@@ -207,12 +207,12 @@ As the more promising of the two methods, dipping was explored further in attemp
 
 \begin{figure}[h!]
         \centering
-        \begin{subfigure}[b]{0.45\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \includegraphics[width=\textwidth]{./figures/filament-108-40-flat-side}
                 \caption{Length.}
                 \label{fig:filament-108-40-flat-side}
         \end{subfigure}
-        \begin{subfigure}[b]{0.45\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \includegraphics[width=\textwidth]{./figures/filament-108-40-flat-end}
                 \caption{Cross section.}
                 \label{fig:filament-108-40-flat-end}
@@ -274,12 +274,26 @@ Tensile tests were performed on the filament samples that were produced using th
 \end{figure}
 
 \begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.5\textwidth]{./figures/instron-card}
-    \caption{A photo of a filament specimen loaded in the Instron for a tensile test.}
-    \label{fig:instron-card}
+        \centering
+        \begin{subfigure}[b]{0.3\textwidth}
+                \includegraphics[width=\textwidth]{./figures/filament-instron-1}
+                \caption{Installed in jaws.}
+                \label{fig:filament-instron-1}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\textwidth}
+                \includegraphics[width=\textwidth]{./figures/filament-instron-2}
+                \caption{Cut card ready for testing.}
+                \label{fig:filament-instron-2}
+        \end{subfigure}
+        \caption{A filament specimen loaded in the Instron for a tensile test.}
 \end{figure}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/filament-card-after-instron}
+    \caption{A photo of a filament specimen after tensile testing.}
+    \label{fig:filament-card-after-instron}
+\end{figure}
 
 \clearpage
 
@@ -318,12 +332,12 @@ The tensile tests performed on the filament samples provide insight into some of
 
 \begin{figure}[h!]
         \centering
-        \begin{subfigure}[b]{0.45\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \includegraphics[width=\textwidth]{./figures/filament-print-3doodler-before}
                 \caption{Before.}
                 \label{fig:filament-print-3doodler-before}
         \end{subfigure}
-        \begin{subfigure}[b]{0.45\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \includegraphics[width=\textwidth]{./figures/filament-print-3doodler-after}
                 \caption{After.}
                 \label{fig:filament-print-3doodler-after}
@@ -344,3 +358,15 @@ The tensile tests performed on the filament samples provide insight into some of
     \caption{A close up photo of the filament printed with the 3Doodler}
     \label{fig:filament-extrude}
 \end{figure}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{lcccc}
+        Material           & Ultimate Tensile Strength (MPa)   & Stiffness (GPa)    & Failure Strain (\%)  \\ \hline
+		Printed Filament & 338 & 7.63 & 4.44
+    \end{tabular}
+    \caption{Tensile test results for the printed CFRP filament}
+    \label{tab:printed-filament-results}
+\end{table}
+
+\subsection{Future Suggestions}
