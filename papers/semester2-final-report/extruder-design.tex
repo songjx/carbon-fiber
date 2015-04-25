@@ -58,6 +58,8 @@ The extruder's custom-machined aluminum components were fabricated in Cooper Uni
 
 \indent
 
+Figure~\ref{fig:extruder-progress-square} through Figure~\ref{fig:extruder-progress-4} show photos of the extruder assembly's progress through the weeks of fabrication. Figure~\ref{fig:extruder-mistake-1} and Figure~\ref{fig:extruder-mistake-2} show photos of two major machining mistakes made during the fabrication process. Due to the severity of these two mistakes extra time was spent remaking these pieces. All other minor errors were easily rectified, such as accidentally swapping which hole was a threaded or thru-hole for clamping two plates together.\\
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.5\textwidth]{./figures/extruder-progress-square}
@@ -119,6 +121,8 @@ The extruder's custom-machined aluminum components were fabricated in Cooper Uni
 
 \indent
 
+Figure~\ref{fig:extruder-edge-finder} through Figure~\ref{fig:extruder-screw-mill} are photos of machining processes being performed on extruder parts while in the shop. Notice how all the images are of pieces on the mill. Except for putting a flat on the stepper motor shaft (rough cut with a dremel and filed to size) and laser cuttig acrylic gears, all custom components were fabricated with the mill.\\
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.5\textwidth]{./figures/extruder-edge-finder}
@@ -136,7 +140,7 @@ The extruder's custom-machined aluminum components were fabricated in Cooper Uni
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.5\textwidth]{./figures/extruder-screw-mill}
-\caption{Extruder machining in action: Notching the screw with a 1/16 in endmill.}
+\caption{Extruder machining in action: Notching the screw with a 1/16 inch endmill.}
 \label{fig:extruder-screw-mill}
 \end{figure}
 
@@ -147,6 +151,8 @@ The extruder's custom-machined aluminum components were fabricated in Cooper Uni
 % assembly photos
 
 \indent
+
+Figure~\ref{fig:extruder-first-mount} through Figure~\ref{fig:extruder-mechanism} are photos of the mounted extruder assembly. Figure~\ref{fig:extruder-first-mount} shows the very first attempt of assembling the extruder to the gripper on the FANUC robot. Notice how the laser-cut gears are not present in this assembly since they were not yet cut. Managing the wires during the assembly proved to be a little challening but ultimately did not require the implementation of a disconnect mechanism on the wires (ie. molex connectors). Figure~\ref{fig:extruder-mounting} highlights some of the gripper mounting features which are not easily seen from a side view and invisible from the front. The gripper jaws contain metric sized holes, through which screws were inserted and threaded into the extruder assembly for additional stability (there are threaded metric screw holes on the upper front of the gripper module which are also utilized as connection points). Figure~\ref{fig:extruder-side-profile} shows the extruder from the side while printing ABS. In addition to highlighting main mechanism (gears and notched screw), this profile also shows kapton tape (translucent, heat resistant tape) that is used to fix wires to the extruder assembly. Finally, Figure~\ref{fig:extruder-mechanism} is a close-up of the extruder mechanism. As intended, the filament is actuated by a notched screw and is held in place by a bearing with adjustable distance. The adjustments plates utilize lockwashers, which act as springs, between the main assembly to statically hold the bearing in multiple positions that accomadate different filament widths.\\
 
 \begin{figure}[h!]
 \centering
@@ -181,6 +187,8 @@ The extruder's custom-machined aluminum components were fabricated in Cooper Uni
 \subsection{Implementation}
 
 \indent
+
+After assembling the extruder on the FANUC robot its functionality was tested using 1.75 mm ABS filament from MakerBot. Figure~\ref{fig:extruder-edge-finder} shows an image of this test. The extruder was able to print the ABS, meaning that the extruder was designed and built properly (the notched screw provided enough traction on the filament, the bearing provided adequate counterpressure, the adjustment plates we compliant to the filament size, the stepper motor and gears were aligned properly and provided enough driving torque, and the heater reached the neceesary temperature).\footnote{At the time that this paper is being written, the CFRP filament has not yet been tested on the extruder. Given that the CFRP filament will be the same diameter and the gripping depth of the screw will only interact with solid ABS, the extruder's performance is not expected to differ.}\\
 
 \begin{figure}[h!]
 \centering
