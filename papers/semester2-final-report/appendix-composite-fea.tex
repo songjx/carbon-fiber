@@ -8,7 +8,7 @@ The \textit{ANSYS Composite PrepPost} finite element package was used predict th
 
 \indent
 
-Figure~\ref{fig:fea-project-schematic} shows the project schematic for the FDM CFRP FEA. The geometry is first imported from \emph{SolidWorks} into \emph{ANSYS Workbench}. An \textit{ACP (Pre)} block is created and references the imported geometry.\textit{ACP (Pre)} is used to establish orthotropic material properties, stackups, layups, laminates, and shell element thickness(es). This data is then transfered to a standard \textit{Static Structural} analysis, where the geometry is descritized using a mesh and loads and boundary conditions are applied to the geometry. An orthotropic analysis can be performed at this stage and outputs standard result sets, such as Von Mises stresses, but will not contain any composite-specific failure behavior. Consequently, the data from \textit{Static Structural} is exported to yet another \textit{ACP (Pre)} block and to an \textit{ACP (Post)} block. The second \textit{ACP (Pre)} block now accesses mesh data. With the mesh now included in the ACP finite element model, oriented element sets, reference direction, fiber orientation, and solid model representations can be created prior to solving. While no line directly connects the \textit{ACP (Pre)} and \textit{ACP (Post)} blocks in the schematic, \textit{ACP (Post)} pulls all of the ACP setup and loads information to perform its analysis. Contour plots of results, such as deformation and failure critera, are created. For the purpose of this analysis that is it. In more advanced composite analyses, ACP can paramtrize fiber orientation from 0$^{\circ}$ to 180$^{\circ}$ and iterate between the two to solve for the strongest and or stiffest configuration.\\
+Figure~\ref{fig:fea-project-schematic} shows the project schematic for the FDM CFRP FEA. The geometry is first imported from \emph{SolidWorks} into \emph{ANSYS Workbench}. An \textit{ACP (Pre)} block is created and references the imported geometry.\textit{ACP (Pre)} is used to establish orthotropic material properties, stackups, layups, laminates, and shell element thickness(es). This data is then transfered to a standard \textit{Static Structural} analysis, where the geometry is descritized using a mesh and loads and boundary conditions are applied to the geometry. A solid-body orthotropic analysis can be performed at this stage and outputs standard result sets, such as Von Mises stresses, but will not contain any composite-specific failure behavior. Consequently, the data from \textit{Static Structural} is exported to yet another \textit{ACP (Pre)} block and to an \textit{ACP (Post)} block. The second \textit{ACP (Pre)} block now accesses mesh data. With the mesh now included in the ACP finite element model, oriented element sets, reference direction, fiber orientation, and solid model representations can be created prior to solving. While no line directly connects the \textit{ACP (Pre)} and \textit{ACP (Post)} blocks in the schematic, \textit{ACP (Post)} pulls all of the ACP setup and loads information to perform its analysis. Contour plots of results, such as deformation and failure behavior, are created. For the purpose of this analysis that is it. In more advanced composite analyses, ACP can paramtrize fiber orientation from 0$^{\circ}$ to 180$^{\circ}$ and iterate between the two to solve for the strongest and or stiffest configuration.\\
 
 \begin{figure}[htp]
 \centering
@@ -23,7 +23,7 @@ Figure~\ref{fig:fea-project-schematic} shows the project schematic for the FDM C
 
 \indent
 
-Table~\ref{tab:ansys-material-properties} lists the materials used in the FEA study. Note that the composite study requires orthotropic elasticities, strain limits, and stress limits. Y and Z-directed properites were assigned values associated with the matrix material, ABS.XY, YZ, and XZ properties were given purely ABS values to create a conservative analysis \large{textbf{CITE}}. Most X-directed properties were assigned values associated with carbon fiber, but \textit{Young's Modulus X Direction}, \textit{Tensile X Direction Stress Limit}, and \textit{Tensile X Direction Strain Limit} were given values found in first-semester filament testing \large{textbf{CITE}}. Since these three values reflect the properties of a CFRP, the analysis is less likely to inflate the predicited strength of the FDM part, which could happen if purely carbon fiber properties were plugged in. Composite failure-specific properties, in this case Puck factors, are also inputs. However, as a phenomenological failure mode, the Puck factors tabulated in Table~\ref{tab:ansys-material-properties} are not material specific. Instead, default values, which have been experimental proven to hold true for most UD CFRP parts, are used \footnote{Carbon fiber and ABS material properties were found from the following websites: \url{http://plastics.ulprospector.com/generics/1/c/t/acrylonitrile-butadiene-styrene-abs-properties-processing}, \url{http://teststandard.com/data_sheets/ABS_Data_sheet.pdf}, and \url{http://www.stratasys.com/~/media/en/Materials/FDM/PC\%20ABS/pc_abs_spec_sheet.pdf}}.\\
+Table~\ref{tab:ansys-material-properties} lists the materials used in the FEA study. Note that the composite study requires orthotropic elasticities, strain limits, and stress limits. Y and Z-directed properites were assigned values associated with the matrix material, ABS.XY, YZ, and XZ properties were given purely ABS values to create a conservative analysis \large{textbf{CITE}}.\footnote{Carbon fiber and ABS material properties were found from the following websites: \url{http://plastics.ulprospector.com/generics/1/c/t/acrylonitrile-butadiene-styrene-abs-properties-processing}, \url{http://teststandard.com/data_sheets/ABS_Data_sheet.pdf}, and \url{http://www.stratasys.com/~/media/en/Materials/FDM/PC\%20ABS/pc_abs_spec_sheet.pdf}}.\\ Most X-directed properties were assigned values associated with carbon fiber, but \textit{Young's Modulus X Direction}, \textit{Tensile X Direction Stress Limit}, and \textit{Tensile X Direction Strain Limit} were given values found in first-semester filament testing \large{textbf{CITE}}. Since these three values reflect the properties of a CFRP, the analysis is less likely to inflate the predicited strength of the FDM part, which could happen if purely carbon fiber properties were plugged in. Composite failure-specific properties, in this case Puck factors, are also inputs. However, as a phenomenological failure mode, the Puck factors tabulated in Table~\ref{tab:ansys-material-properties} are not material specific. Instead, default values, which have been experimental proven to hold true for most UD CFRP parts, are used.\\
 
 \begin{table}[htp]
     \centering
@@ -152,7 +152,7 @@ Figure~\ref{fig:fea-mechanical-mesh-surface} shows an overview of the meshed sur
 
 \indent
 
-Figure~\ref{fig:fea-acp-mesh-overview} shows the meshed surface model upon import to ACP. While not directly displayed in ACP, the loads and boundary conditions previously applied are still saved and act on the model.\\
+Figure~\ref{fig:fea-acp-mesh-overview} shows the meshed surface model after import into ACP. While not directly displayed in ACP, the loads and boundary conditions previously applied are still saved and act on the model.\\
 
 \begin{figure}[htp]
 \centering
@@ -248,7 +248,7 @@ In order to set a reference direction and create fiber orientations, an oriented
 
 \indent
 
-As shown in Figure~\ref{fig:fea-acp-modeling-ply-properties}, modeling plys reference and exisitng stack up and propogate it for a number of layers. For this study, 60 layers were used to achieve the desired part thickness. Once the number of layers is set, a scalable section view is made visible, which is shown in red in Figure~\ref{fig:fea-acp-ply-scaling} showing eac ply layer.\\
+As shown in Figure~\ref{fig:fea-acp-modeling-ply-properties}, modeling plys reference and existing stack up and propogate it for a number of layers. For this study, 60 layers were used to achieve the desired part thickness. Once the number of layers is set, a scalable section view is made visible, which is shown in red in Figure~\ref{fig:fea-acp-ply-scaling} showing eac ply layer.\\
 
 \begin{figure}[htp]
 \centering
@@ -292,7 +292,7 @@ The plys can also be represented as a solid body. Figure~\ref{fig:fea-acp-solidm
 
 \indent
 
-As mentioned, Puck's failure critera was used for this finite element analysis, and is configured in post-processing. Figure~\ref{fig:fea-acp-failure-criteria-definition} shows the window where Puck is selected. Although it was not done in this study, multiple failure criteria can be configured for any analysis. Figure~\ref{fig:fea-acp-puck-failure-criterion} displays the specific options selected for this configuration. Note the default Puck constants that were defined with the CFRP material could be altered in this window. For this analysis, Puck's constants were left untouched, the model solved using a 3D state of stress which access fiber stress data to determine its impact on IFF scenarios, and ignores fiber failure options since tensile test shows that the matrix material of this filament clearly failes prior to the fiber.\\
+As mentioned, Puck's failure critera was used for this finite element analysis, and is configured in post-processing. Figure~\ref{fig:fea-acp-failure-criteria-definition} shows the window where Puck is selected. Although it was not done in this study, multiple failure criteria can be configured for any analysis. Figure~\ref{fig:fea-acp-puck-failure-criterion} displays the specific options selected for this configuration. Note the default Puck constants that were defined with the CFRP material could be altered in this window. For this analysis, Puck's constants were left untouched, the model solved using a 3D state of stress which access fiber stress data to determine its impact on IFF scenarios, and ignores fiber failure options since tensile test shows that the matrix material of this filament clearly fails before the fiber.\\
 
 \begin{figure}[htp]
 \centering
@@ -320,7 +320,7 @@ For comparison, and model validation, solid-body FEA studies of ABS and aluminum
 
 \indent
 
-A static structural analysis was performed in \emph{ANSYS} mechanical using solid body geometry imported from \emph{SolidWorks}. ACP was not utilized for the ABS case because it is only meant for composite materials, which pure ABS is not. Subsequently, while that software pack could located delamination failures, which would be of interest in an FDM part, the results would be false and incorrect because they would use composite failure criteria. \\
+A static structural analysis was performed in \emph{ANSYS} mechanical using solid body geometry imported from \emph{SolidWorks}. ACP was not utilized for the ABS case because it is only meant for composite materials, which pure ABS is not. Subsequently, while that software package could locate delamination failures, which would be of interest in an FDM part, the results would be false and incorrect because the package would be using composite failure criteria. \\
 
 \subsubsection{Geometry}
 
@@ -339,7 +339,7 @@ Figure~\ref{fea-body-geometry} shows a \emph{SolidWorks} drawings of the geometr
 
 \indent
 
-Properties for the aluminum analysis were pulled from the materials library for aluminum alloy within \emph{ANSYS}. ABS is not included within the library and had to be input as a new material \large{\textbf{CITE}}. Table~\ref{tab:abs-properties} lists these values.\\
+Properties for the aluminum analysis were pulled from the materials library for aluminum alloy within \emph{ANSYS}. ABS is not included within the library and had to be input as a new material using the previously tabulated ABS data. Table~\ref{tab:abs-properties} lists these values.\\
 
 \begin{table}[htp]
     \centering
@@ -363,7 +363,7 @@ Properties for the aluminum analysis were pulled from the materials library for 
 
 \indent 1/64 inch
 
-Figure~\ref{fig:fea-solid-mesh-overview} shows an overview of the mesh used to descritize the solid geometry while Figure~\ref{fig:fea-solid-mesh-closeup} shows a closeup of the mesh on the smallest geometric feature. A global mesh sizing constraint (1/64 inches) and sweep method were used to generate this mesh. While this mesh significantly finer than the model used in ACP, mesh sensitivity studies (increasing mesh resolution until stress values stop increasing with each increment and settle) deemed that extra resolution was necessary. Subsequently, aspect ratio statistics in Figure~\ref{fig:fea-solid-mesh-metrics} show good statistics (all elements below 3).\\
+Figure~\ref{fig:fea-solid-mesh-overview} shows an overview of the mesh used to descritize the solid geometry while Figure~\ref{fig:fea-solid-mesh-closeup} shows a closeup of the mesh on the smallest geometric feature. A global mesh sizing constraint (1/64 inches) and sweep method were used to generate this mesh. While this mesh is significantly finer than the one in ACP, mesh sensitivity studies (increasing mesh resolution until stress values stop increasing with each increment and settle) deemed that extra resolution was necessary. Subsequently, aspect ratio statistics in Figure~\ref{fig:fea-solid-mesh-metrics} show good statistics (all elements below 3).\\
 
 \begin{figure}[htp]
 \centering
@@ -392,7 +392,7 @@ Figure~\ref{fig:fea-solid-mesh-overview} shows an overview of the mesh used to d
 
 \indent
 
-The same boundary conditions applied in ACP where applied to this model. Figure~\ref{fig:fea-solid-loads-bcs} and Figure~\ref{fig:fea-solid-loads-bcs-3} show the zero-displacement, fixed and force conditions that represent compression in the Instron when clamped with the jaws.\\
+The same boundary conditions applied in ACP were applied to this model. Figure~\ref{fig:fea-solid-loads-bcs} and Figure~\ref{fig:fea-solid-loads-bcs-3} show the zero-displacement, fixed and force conditions that represent compression in the Instron when clamped in the jaws.\\
 
 \begin{figure}[htp]
 \centering
@@ -488,6 +488,6 @@ Figure~\ref{fig:fea-solid-al-vms-top} and Figure~\ref{fig:fea-solid-al-vms-botto
 
 \subsection{Conclusions from FEA}
 
-As summarized in the report body, the CFRP FDM results from ACP are logical when compared to the ABS and aluminum finite element results and are confirmed by qualitative applications of Puck's theory. Of course, without a physical printed part to experimentally test, the ACP model cannot be completely validated. Therefore, it is important going forward that printed pieces are experimentally tested and ACP setup properties are tweaked to match experimental data as closely as possible. For instance, Puck failure critera were all weighted at unity. While changing these values slightly affects the output results\footnote{Testing this only indicated that failure mode altered, never the critical ply layer.}, it is best practive to adjust the model to most accurately reflect the parts physical failure behavior.
+As summarized in the report body, the CFRP FDM results from ACP are logical when compared to the ABS and aluminum finite element results and are confirmed by qualitative applications of Puck's theory. Of course, without a physical printed part to experimentally test, the ACP model cannot be completely validated. Therefore, it is important going forward that printed pieces are experimentally tested and ACP setup properties are tweaked to match experimental data as closely as possible. For instance, Puck failure critera were all weighted at unity. While changing these values slightly affects the output results\footnote{Testing this only indicated that failure mode altered, never the critical ply layer.}, it is best practive to adjust the model, which potentially means changing these values, to most accurately reflect the parts physically observed failure behavior.\\
 
 \clearpage
