@@ -53,7 +53,7 @@ The analog output module offers two channels, each with a voltage output and a c
 \end{figure}
 
 \subsubsection{Housing design}
-A housing cabinet was designed and built to protect the I/O modules and allow access for maintenance and further expansion. The installed cabinet is shown in Figures~\ref{fig:cabinet1} and ~\ref{fig:cabinet2}. The cabinet was designed with inside dimensions according to \cite[sec~3.2]{io-unit}. Because the total heat generation of the two modules is only 4.3W, according to \cite[Table~3.3]{io-unit}, no special ventilation features were added. The cabinet mounts to the CERT cart frame alongside the FANUC controller. Drawings and a bill of materials for the cabinet are in \ref{sec:cabinet-drawings}.
+A housing cabinet was designed and built to protect the I/O modules and allow access for maintenance and further expansion. The installed cabinet is shown in Figures~\ref{fig:cabinet1} and ~\ref{fig:cabinet2}. The cabinet was designed with inside dimensions according to \cite[sec~3.2]{io-unit}. Because the total heat generation of the two modules is only 4.3W, according to \cite[Table~3.3]{io-unit}, no special ventilation features were added. The cabinet mounts to the CERT cart frame alongside the FANUC controller. Drawings and a bill of materials for the cabinet are available in Appendix~\ref{sec:cabinet-drawings}.
 
 \begin{figure}
     \centering
@@ -69,8 +69,20 @@ A housing cabinet was designed and built to protect the I/O modules and allow ac
     \label{fig:cabinet-2}
 \end{figure}
 
-\subsection{Jameco power supply}
 \subsection{Megatronics board}
+The Megatronics\footnote{\url{http://reprap.org/wiki/Megatronics_2.0}} board is a microcontroller board designed to drive RepRap open-source 3D printers. The board itself is based on other open-source projects, namely the Arduino Mega 2560\footnote{\url{http://www.arduino.cc/en/Main/arduinoBoardMega2560}} and the RAMPS\footnote{\url{http://reprap.org/wiki/RAMPS}} electronics design. The core features of the board are the ATmega 2560\footnote{\url{http://www.atmel.com/devices/atmega2560.aspx}} microcontroller, the Pololu stepper driver\footnote{\url{https://www.pololu.com/category/120/stepper-motor-drivers}} slots, and the extruder signal pins. The board is also set up for optional dual extruders, a heated bed, and an LCD display among other additional features. The Megatronics board was chosen for this project mostly out of convenience: although few of the board's features are used here, its compatibility with exsisting firmwares and control modules made the setup relatively easy compared to making a custom pared-down controller board. A datasheet for the board is available in Appendix~\ref{sec:mega-datasheet}.
+
 \subsubsection{Mounting}
+The Megatronics board is mounted to the frame of the CERT robot cart such that the board is accessible for modifications and the wires reach the extruder readily. The mount location also facilitates USB connection to a laptop for uploading new firmware\footnote{A 16ft USB cable was initially used in hopes of routing the cable through the frame for easy access in case the board was moved to a less accessible location. The resulting avrdude sync errors prevented any programs from uploading properly even though the cable was shorter than the recommended 5m maximum. Using a 2ft cable alleviated the problem.}. The mounted board is shown in Figure~\ref{fig:mounted-mega}. Drawings and a bill of materials for the mount are available in Appendix~\ref{sec:mega-drawings}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/mounted-mega}
+    \caption{The mounted Megatronics board.}
+    \label{fig:mounted-mega}
+\end{figure}
+
 \subsubsection{Wiring and connections}
 \subsubsection{Firmware}
+
+\subsection{Jameco power supply}
