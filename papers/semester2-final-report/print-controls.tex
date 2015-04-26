@@ -13,17 +13,64 @@ Normally, the Megatronics board is used to control the path of the extruder as w
 \begin{figure}
     \centering
     \includegraphics[width=.8\linewidth]{figures/diagrams/system overview}
-    \caption{Overview of the 3D printer controls}
+    \caption{Overview of the 3D printer controls.}
     \label{fig:sys-overview}
+\end{figure}
+
+A more detailed electrical schematic is shown in Figure~\ref{fig:schem-fig}. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/diagrams/schematic-figure}
+    \caption{Electrical schematic of the 3D printer controls.}
+    \label{fig:schem-fig}
 \end{figure}
 
 
 \subsection{FANUC I/O interface}
-    \subsubsection{Modules}
-    \subsubsection{Housing design}
-    \subsubsection{Wiring and connections}
+The FANUC robot controller makes digital and analog electrical signals available to the user through the teach pendant interface \cite[sec~3.1.3]{lr-handling-tool}. However, in order to physically access these signals, additional I/O hardware is required. For this purpose, a FANUC backplane was purchased, as well as a corresponding I/O unit and analog output module. Installation, maintenance, and usage information for these parts is available in \cite{io-unit}. 
+
+\subsubsection{Modules}
+The I/O Unit Model A (interface module) makes the I/O points of the FANUC robot controller accessible through additional I/O modules. The interface module is installed in the first slot of the backplane, as shown in \cite[p~10]{io-unit}. The analog output module is installed in the next slot, and the remaining four slots are left empty.
+
+\subsubsection{Wiring and connections}
+The I/O interface module is connected to the controller and power supply according to \cite[ch~4]{io-unit}. A power supply (CUI Inc EPS240025-P5P, datasheet in Section~\ref{sec:io-power}) and grounding wire were selected according to \cite[sec~4.2]{io-unit} and \cite[sec~4.3]{io-unit}, respectively. Figures~\ref{fig:io-door} and \ref{fig:io-ground} show the I/O link cable connected on the back of the controller door and attached to the grounding plate as shown in \cite[Fig.3.2.2]{controller-maintenance}. Figure~\ref{fig:io-ground} also shows the installed ground wire for the I/O backplane, as described in \cite[sec~4.3]{io-unit}.
+
+The analog output module offers two channels, each with a voltage output and a current output. The Channel 0 voltage output was chosen; the module pinout is available in \cite[sec~7.1.3]{io-unit}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.5\linewidth]{figures/diagrams/io-door-circled}
+    \caption{I/O link cable installed in cabinet door.}
+    \label{fig:io-door}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/diagrams/io-ground-circled}
+    \caption{I/O link cable and back plane grounding.}
+    \label{fig:io-ground}
+\end{figure}
+
+\subsubsection{Housing design}
+A housing cabinet was designed and built to protect the I/O modules and allow access for maintenance and further expansion. The installed cabinet is shown in Figures~\ref{fig:cabinet1} and ~\ref{fig:cabinet2}. The cabinet was designed with inside dimensions according to \cite[sec~3.2]{io-unit}. Because the total heat generation of the two modules is only 4.3W, according to \cite[Table~3.3]{io-unit}, no special ventilation features were added. The cabinet mounts to the CERT cart frame alongside the FANUC controller. Drawings and a bill of materials for the cabinet are in \ref{sec:cabinet-drawings}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.5\linewidth]{figures/cabinet1}
+    \caption{The I/O cabinet.}
+    \label{fig:cabinet-1}
+    \end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/cabinet2}
+    \caption{The I/O cabinet installed alongside the FANUC controller.}
+    \label{fig:cabinet-2}
+\end{figure}
+
 \subsection{Jameco power supply}
 \subsection{Megatronics board}
-    \subsubsection{Mounting}
-    \subsubsection{Wiring and connections}
-    \subsubsection{Firmware}
+\subsubsection{Mounting}
+\subsubsection{Wiring and connections}
+\subsubsection{Firmware}

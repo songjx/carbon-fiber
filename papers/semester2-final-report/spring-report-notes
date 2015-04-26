@@ -1,3 +1,8 @@
+TODO
+
+take photo of teach pendant
+add part number of backplane to electrical schematic
+
 SECTIONS
 
 Print Controls
@@ -44,6 +49,7 @@ Fanuc Programming
     explanation of tool orientation choice and tool offset for offsetting contour to create thickened layers properly - also choice of contour shape wrt available move commands (circular interpolation)
     discussion of more flexible robot programming for the future - don't rely on teaching-based system for more complex toolpaths of course
     speed output (thanks to jay strybis)
+        IO config, system variables, etc
 
 
 APPENDICES
@@ -58,6 +64,14 @@ more info
     where to find FANUC parts
     git overview
     fanuc file backups
+    fanuc gate switch error...
+    software used
+        latex
+        expressSCH
+        draw.io
+        inkscape
+        illustrator
+        solidworks
 datasheets
     megatronics
     CERT brochure
