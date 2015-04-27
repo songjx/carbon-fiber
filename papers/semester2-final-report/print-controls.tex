@@ -83,6 +83,44 @@ The Megatronics board is mounted to the frame of the CERT robot cart such that t
 \end{figure}
 
 \subsubsection{Wiring and connections}
+In order to keep the wires neat where they met the board, the acrylic mount was designed with cable-tie slots, and the extruder wires were bundled in expandable polyester sleeving. These are shown in Figure~\ref{fig:mega-back}. The power and analog input wires to the board both terminate somewhere in the bottom portion of the cart, so those wires were routed through the slots in the cart's auminum extrusions, shown in Figure~\ref{fig:frame-wire-route}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.5\linewidth]{figures/megatronics-back}
+    \caption{Wire managament at the Megatronics board.}
+    \label{fig:mega-back}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/frame-wire-route}
+    \caption{Wires routed through the cart frame slots.}
+    \label{fig:frame-wire-route}
+\end{figure}
+
 \subsubsection{Firmware}
+The Megatronics board is compatible with the Marlin open-source 3D printer firmware. The board is generally supplied with the Marlin firmware already uploaded, but the board is open to modified or completely different firmwares in case of other development projects. The Marlin firmware exists as a Git repository hosted on Github\footnote{\url{https://github.com/}}. See Appendix~\ref{sec:more-info} for more information on Git.
+
+Before attempting to use the full Marlin firmware, the board was tested for basic functionality using the supplied test firmware\footnote{\url{http://reprap.org/wiki/Megatronics_2.0\#Files}}. Once the board functionality was confirmed, the Marlin firmware was forked\footnote{\url{https://help.github.com/articles/fork-a-repo/}} and configured\footnote{\url{http://reprap.org/wiki/Marlin\#Configuring_and_compilation}} for this project's custom extruder. The new repository is linked in Appendix~\ref{sec:more-info}. Note in \verb|Configuration.h| that the extruder \verb|e_steps_per_mm| is calculated from on the stepper motor, gear ratio, and effective filament drive diameter of the custom extruder. Also note that \verb|FAN_PIN| and \verb|FAN2_PIN| are swapped because the Megatronics board is (for reasons unknown) missing screws from the screw terminals for Fan 1.
 
 \subsection{Jameco power supply}
+\subsubsection{Current requirement}
+The Megatronics board can be powered from a 5V USB connection or from a 12V external power supply, as determined by on-board jumpers (see the datasheet, Appendix~\ref{sec:mega-datasheet}). The USB power from a typical laptop is adequate for communicating with and programming the board. However, driving stepper motors and heating cartridges requires far more current than a laptop USB port can supply, so a Jameco OEM power supply was chosen to power the board. The supply is rated for 11.5A at 12V. The extruder stepper motor is rated at 1.7A/phase with two phases for a total current draw of \(1.7\si{\ampere}\sqrt{2}=2.4\si{\ampere}\). The ceramic heater is rated for 30W at 12V\footnote{\url{http://www.makerfarm.com/index.php/hexagon-hot-end.html}}, for a current draw of \(\frac{30\si{\watt}}{12\si{\volt}}=2.5\si{\ampere}\). There are no other significant electrical loads in the extruder, so the Jameco power supply is adequate for the custom extruder. The power supply datasheet is available in Appendix~\ref{sec:jameco-datasheet}.
+
+\subsubsection{Mounting}
+The power supply was mounted at the rear of the underside of the CERT cart bed frame. The mounted supply is pictured in Figure~\ref{fig:jameco-mounted}. The mounting location was chosen for easy access for future wiring activities. A clear acrylic cover was made to protect any person or foreign object from accidentally touching the screw terminals. The cover was laser cut and then bent to shape using a purpose-built strip heater, shown in Figure~\ref{fig:strip-heat}. Drawings and a bill of materials for the mounting setup are available in Appendix~\ref{sec:jameco-drawings}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/jameco-mounted}
+    \caption{The mounted Jameco power supply.}
+    \label{fig:jameco-mounted}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/strip-heat}
+    \caption{Power supply screw terminal cover on the strip heater.}
+    \label{fig:strip-heat}
+\end{figure}
