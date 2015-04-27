@@ -28,15 +28,22 @@ A more detailed electrical schematic is shown in Figure~\ref{fig:schem-fig}.
 
 
 \subsection{FANUC I/O interface}
-The FANUC robot controller makes digital and analog electrical signals available to the user through the teach pendant interface \cite[sec~3.1.3]{lr-handling-tool}. However, in order to physically access these signals, additional I/O hardware is required. For this purpose, a FANUC backplane was purchased, as well as a corresponding I/O unit and analog output module. Installation, maintenance, and usage information for these parts is available in \cite{io-unit}. 
+The FANUC robot controller makes digital and analog electrical signals available to the user through the teach pendant interface \cite[sec~3.1.3]{lr-handling-tool}. However, in order to physically access these signals, additional I/O hardware is required. For this purpose, a FANUC backplane was purchased, as well as a corresponding I/O interface model and analog output module. Installation, maintenance, and usage information for these parts is available in \cite{io-unit}. The backplane and I/O interface module were purchased together as part of an I/O starter kit\footnote{from an eBay surplus seller.} for R-30iA controllers. The kit also included the I/O link cable, which connects the I/O interface unit to the controller and optional additional interface units; a grounding wire assembly for the backplane; and a male-male wire assembly for powering the I/O interface module. The analog output module was purchased separately. 
 
 \subsubsection{Modules}
 The I/O Unit Model A (interface module) makes the I/O points of the FANUC robot controller accessible through additional I/O modules. The interface module is installed in the first slot of the backplane, as shown in \cite[p~10]{io-unit}. The analog output module is installed in the next slot, and the remaining four slots are left empty.
 
 \subsubsection{Wiring and connections}
-The I/O interface module is connected to the controller and power supply according to \cite[ch~4]{io-unit}. A power supply (CUI Inc EPS240025-P5P, datasheet in Section~\ref{sec:io-power}) and grounding wire were selected according to \cite[sec~4.2]{io-unit} and \cite[sec~4.3]{io-unit}, respectively. Figures~\ref{fig:io-door} and \ref{fig:io-ground} show the I/O link cable connected on the back of the controller door and attached to the grounding plate as shown in \cite[Fig.3.2.2]{controller-maintenance}. Figure~\ref{fig:io-ground} also shows the installed ground wire for the I/O backplane, as described in \cite[sec~4.3]{io-unit}.
+The I/O interface module is connected to the controller and power supply according to \cite[ch~4]{io-unit}. In some configurations, the I/O interface unit would receive power from an auxiliary controller (a CNC machine, for instance) over the included cable. In this case, an external supply was needed. Additionally, the included grounding wire was too short to reach the inside of the existing FANUC controller from its desired location on the backplane. Thus, a power supply (CUI Inc EPS240025-P5P, datasheet in Section~\ref{sec:io-power}) and grounding wire were selected according to \cite[sec~4.2]{io-unit} and \cite[sec~4.3]{io-unit}, respectively. The power supply was spliced to the included power wire; the result is shown in Figure~\ref{fig:io-power}. Figures~\ref{fig:io-door} and \ref{fig:io-ground} show the I/O link cable connected on the back of the controller door and attached to the grounding plate as shown in \cite[Fig.3.2.2]{controller-maintenance}. Figure~\ref{fig:io-ground} also shows the installed ground wire for the I/O backplane, as described in \cite[sec~4.3]{io-unit}.
 
 The analog output module offers two channels, each with a voltage output and a current output. The Channel 0 voltage output was chosen; the module pinout is available in \cite[sec~7.1.3]{io-unit}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/io-power-splice}
+    \caption{I/O interface module power supply.}
+    \label{fig:io-power}
+\end{figure}
 
 \begin{figure}
     \centering
@@ -53,7 +60,7 @@ The analog output module offers two channels, each with a voltage output and a c
 \end{figure}
 
 \subsubsection{Housing design}
-A housing cabinet was designed and built to protect the I/O modules and allow access for maintenance and further expansion. The installed cabinet is shown in Figures~\ref{fig:cabinet1} and ~\ref{fig:cabinet2}. The cabinet was designed with inside dimensions according to \cite[sec~3.2]{io-unit}. Because the total heat generation of the two modules is only 4.3W, according to \cite[Table~3.3]{io-unit}, no special ventilation features were added. The cabinet mounts to the CERT cart frame alongside the FANUC controller. Drawings and a bill of materials for the cabinet are available in Appendix~\ref{sec:cabinet-drawings}.
+A housing cabinet was designed and built to protect the I/O modules and allow access for maintenance and further expansion. The installed cabinet is shown in Figures~\ref{fig:cabinet1} and ~\ref{fig:cabinet2}. The cabinet was designed with inside dimensions according to \cite[sec~3.2]{io-unit}. Because the total heat generation of the two modules is only 4.3W, according to \cite[Table~3.3]{io-unit}, no special ventilation features were added. Clear polycarbonate was chosen as the cabinet material for easy visual checking of the I/O interface module status lights and proper wiring. The polycarbonate panels were adhered together with a SCIGRIP acrylic cement\footnote{\url{http://www.scigrip.com/product.php?id=16}}. The cabinet mounts to the CERT cart frame alongside the FANUC controller. Felt washers, shown in Figure~\ref{fig:felt-washer}, were used to protect the cabinet bottom from the frame members. Drawings and a bill of materials for the cabinet are available in Appendix~\ref{sec:cabinet-drawings}.
 
 \begin{figure}
     \centering
@@ -67,6 +74,13 @@ A housing cabinet was designed and built to protect the I/O modules and allow ac
     \includegraphics[width=.8\linewidth]{figures/cabinet2}
     \caption{The I/O cabinet installed alongside the FANUC controller.}
     \label{fig:cabinet-2}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/felt-washer}
+    \caption{A felt washer in the I/O cabinet mount.}
+    \label{fig:felt-washer}
 \end{figure}
 
 \subsection{Megatronics board}
@@ -103,6 +117,20 @@ In order to keep the wires neat where they met the board, the acrylic mount was 
 The Megatronics board is compatible with the Marlin open-source 3D printer firmware. The board is generally supplied with the Marlin firmware already uploaded, but the board is open to modified or completely different firmwares in case of other development projects. The Marlin firmware exists as a Git repository hosted on Github\footnote{\url{https://github.com/}}. See Appendix~\ref{sec:more-info} for more information on Git.
 
 Before attempting to use the full Marlin firmware, the board was tested for basic functionality using the supplied test firmware\footnote{\url{http://reprap.org/wiki/Megatronics_2.0\#Files}}. Once the board functionality was confirmed, the Marlin firmware was forked\footnote{\url{https://help.github.com/articles/fork-a-repo/}} and configured\footnote{\url{http://reprap.org/wiki/Marlin\#Configuring_and_compilation}} for this project's custom extruder. The new repository is linked in Appendix~\ref{sec:more-info}. Note in \verb|Configuration.h| that the extruder \verb|e_steps_per_mm| is calculated from on the stepper motor, gear ratio, and effective filament drive diameter of the custom extruder. Also note that \verb|FAN_PIN| and \verb|FAN2_PIN| are swapped because the Megatronics board is (for reasons unknown) missing screws from the screw terminals for Fan 1.
+
+\subsubsection{Software}
+Once the Megatronics board is set up, it is ready to take commands from a computer. It accepts G-code\footnote{\url{http://en.wikipedia.org/wiki/G-code}}, in this case, over a USB interface. G-code for RepRap 3D printers usually includes extruder motion commands, speed settings, heater temperature settings, fan speeds, and more. Usually, a 3D printed part starts as a 3D model file such as an \verb|.stl| or a \verb|.step|. A piece of computer software "slices" the model, creating the toolpath necessary to print the file. The software also uses information about the 3D printer's geometry and printing hardware to generate the appropriate G-code. Later, the computer sends the G-code to the 3D printer controller, the Megatronics board in this case, which then interprets the G-code and creates the printed part.
+
+For this project, there is not yet any software that handles curved-layer FDM 3D printing. Thus, the "slicer" portion of the software will not be used yet. Because the extruder motion control is all handled by the FANUC robot, for now, all that is needed is a G-code sending application to control the extruder heating, cooling, and feed. Pronterface, part of the Printrun\footnote{\url{http://reprap.org/wiki/Printrun}} package, was chosen to send G-code to the Megagronics board. Pronterface is a GUI (graphical user interface) that simplifies interfacing with RepRap printers, especially while debugging the extruder itself. 
+
+The main Pronterface interface is shown in Figure~\ref{fig:pronterface}. At a glance, the interface allows the user to connect and disconnect from printers, change feedrates, jog the motors, and set heater setpoints in addition to providing a G-code command line.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.9\linewidth]{figures/pronterface}
+    \caption{The main Pronterface interface.}
+    \label{fig:pronterface}
+\end{figure}
 
 \subsection{Jameco power supply}
 \subsubsection{Current requirement}
