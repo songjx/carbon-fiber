@@ -35,15 +35,20 @@
   :   P[3] 250mm/sec FINE Tool_Offset
 23:J  P[2] 100% FINE Tool_Offset
 24:J  P[1] 100% FINE Tool_Offset
-25:  PR[13,2:contour offset]=(
+25:  R[5:contour num]=R[5:contour num]+1     // increment contour counter
+26:  IF R[5:contour num]>=31,JMP LBL[3]      // don't increment after last 
+                                                contour pair
+27:  PR[13,2:contour offset]=(
   :  PR[13,2:contour offset]+
   :  R[6:contour incremnt]*
   :  R[7:contour incr dir]))
-26:  R[5:contour num]=R[5:contour num]+1     // increment contour counter
-27:  IF R[5:contour num]<31,JMP LBL[1]
-28:  R[4:layer num]=R[4:layer num]+1         // increment layer counter
-29:  PR[12,3:layer frame RW]=                // increment layer frame 
+28:  JMP LBL[1]
+29:  LBL[3]
+30:  R[4:layer num]=R[4:layer num]+1         // increment layer counter
+31:  PR[12,3:layer frame RW]=                // increment layer frame 
   :  PR[12,3:layer frame RW]+.1                 position register
-29:  IF R[4:layer num]<31,JMP LBL[2]
+32:  R[7:contour incr dir]=                  // invert contour increment
+  :  R[7:contour incr dir]*(-1)                 direction
+33:  IF R[4:layer num]<31,JMP LBL[2]
 [END]
 \end{verbatim}
