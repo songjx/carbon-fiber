@@ -124,7 +124,9 @@ Position registers are like data registers; they are used to hold position data\
 
 \subsubsection{Toolpath point generation}
 \label{sec:point-gen}
-For the curved-layer test specimen described by \verb|bridge_f.tp|, the geometry was defined at only nine points along one contour of the specimen. These points are recorded in the same format as position register data. However, unlike position registers, these points are defined only within the scope of the \verb|bridge_f.tp| program. They appear first in lines \verb|12-17|. Figure~\ref{fig:toolpath-coords} shows the point coordinates and their positions on a representative section of the specimen. 
+For the curved-layer test specimen described by \verb|bridge_f.tp|, the geometry was defined at only nine points along one contour of the specimen. These points are recorded in the same format as position register data. However, unlike position registers, these points are defined only within the scope of the \verb|bridge_f.tp| program. They appear first in lines \verb|12-17|. Figure~\ref{fig:toolpath-coords} shows the point coordinates and their positions on a representative section of the specimen. The coordinates shown represent the position and orientation of the extruder Tool Frame with respect to the printer User Frame, as indicated in the upper left corner of the figure. Each position has \(W = 180\si{\degree}\) to orient the Z-axis of extruder nozzle downwards toward the print area. The \(R\) values are set to keep the Y-axis of the extruder normal to the printed contour. This consideration is further explained in Section~\ref{sec:pos-incr}.
+
+Note that the section lies in the \(Z = 0\) plane of the User Frame. This orientation of the part allows it to be printed flat on the bed. Future work, of course, would involve actual curved-layer printing, using the full capability of the robot arm. However, printing in flat layers for an initial test simplified the setup by removing the need for printing supports under the raised portion of the part. Even without curved-layer printing, a successful print with this configuration would still align the carbon fiber in the desired orientation (along the part contour), and it would represent a good proof-of-concept for the FANUC robot as an FDM 3D printer platform.
 
 \begin{figure}
     \centering
@@ -135,6 +137,22 @@ For the curved-layer test specimen described by \verb|bridge_f.tp|, the geometry
 
 \subsubsection{Position increments}
 \label{sec:pos-incr}
+With the toolpath points defined for the basic contour of the curved-layer specimen defined, the 
+resulting toolpath segment can be used iteratively to generate the entire volume of the part. For this purpose, one bead of printed filament can be considered to have an approximately rectangular some width and some height in the direction normal to the surface directly under the filament. The width of the printed bead determines how many beads laid in parallel are needed to cover a desired width of some printing area; the height of the bead determines how many layers are needed to build up the desired height of the part. The height is set by programming the printer to use a certain layer increment height. The width of the bead is then affected by the layer height, nozzle outlet diameter, and other filament extrusion parameters. For this printing setup, optimal values should be experimentally determined. Approximate values might be obtained by examining existing FDM 3D printers, particularly open-source ones, as more detailed discussion of their mechanisms can be found than for others. 
+
+Because the curved-layer specimen has a constant rectangular section along its fiber axis, each Z-layer can be identical, with fibers laid parallel to the singly-defined toolpath segment. This fiber orientation is consistent with the models used in the FEA studies. The first contour can be used to generate the toolpath points for the remaining contours. Generating the points for the next toolpath points is not as simple as incrementing the Y-value of each point by the predicted bead width, because the resulting contour would not nest properly (without gaps between beads) with the previous contour. The result on one point of properly offsetting the contour is illustrated in Figure~\ref{fig:pt-offset}. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/point-offset-diagram}
+    \caption{Effect of offsetting on a contour toolpath point.}
+    \label{fig:pt-offset}
+\end{figure}
+
+For each original point \(P\) on the original contour, the corresponding point \(P'\) on the offset contour lies on the line intersecting point \(P\) and normal to the contour at point \(P\). The distance between \(P\) and \(P\) is the effective width of the extruded bead. Note that the angle \(R\) is the same as the orientation coordinate \(R\) used in defining the toolpath points for the original contour. As stated earlier, defining the original toolpath points in this way results in the Y-axis being kept normal to the contour at all points. This design allows the use of the Tool Offset condition, which is described in detail in \cite[sec~4.11]{lr-handling-tool}. Using the Tool Offset condition allows the points on the new contour to be generated by simply incrementing position of the TCP along the Y-axis of the Tool Frame. The Tool Offset Condition instruction appears on line \verb|8| of \verb|bridge_f.tp|; it is defined using the \verb|contour offset| position register, which is incremented (or decremented) on lines \verb|18| and \verb|25| after every contour is drawn. Each contour motion instruction is appended with a \verb|Tool_Offset| flag that marks it for modification by the Tool Offset Condition.
+
+Because only one level of Tool Offset Conditions can be created at once for a given motion instruction, the layer height offset in \verb|bridge_f.tp| was implemented by incrementing the z-coordinate of the User Frame itself rather than incrementing the z-coordinates of every individual toolpath point. After every layer, the User Frame's position in space is raised by the desired layer height; the z-coordinates of the toolpath points remain 0. The User Frame is effectively used as the 
+
 \subsubsection{Control flow}
 
 \subsection{Speed output signal}
