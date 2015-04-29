@@ -55,13 +55,29 @@ Typical FDM 3D printers, including industrial, home, and do-it-yourself printers
 
 Figure~\ref{fig:sys-overview} gives a schematic overview of the mechanical, hardware, and software components that make up the curved-layer 3D printer system. The robot arm is the mechanical platform for the 3D printer. The custom extruder is fitted to the end of the robot arm and acts as a printing end effector. The motion of the robot arm is controlled by the robot controller, which is programmed by writing TP programs via the controller teach pendant. The extruder hardware, including the heater cartridge, cooling fan, and extrusion motor are controlled by an open-source Megatronics board loaded with the (also open-source) Marlin firmware. 
 
-In a typical RepRap 3D printer using a Megatronics board, the Megatronics board is used to control the path of the extruder as well as the extrusion feed rate; the Marlin firmware can adjust the extruder filament feedrate according to the surface speed of the extruder in order to maintain the desired volu. However, here, the FANUC controller provides the motion control, while the Megatronics board only controls the extrusion. Thus, additional interfacing is required to provide the Megatronics board with real-time information about the robot's motion. For this purpose, I/O hardware was connected to the FANUC robot controller. During motion, an analog output from the I/O module provides the extruder surface speed to the Megatronics board, which can use that information to control the extrusion speed accordingly.
+In a typical RepRap 3D printer using a Megatronics board, the Megatronics board is used to control the path of the extruder as well as the extrusion feed rate; the Marlin firmware can adjust the extruder filament feedrate according to the surface speed of the extruder in order to maintain the desired volu. However, here, the FANUC controller provides the motion control, while the Megatronics board only controls the extrusion. Thus, additional interfacing is required to provide the Megatronics board with real-time information about the robot's motion. For this purpose, I/O hardware was connected to the FANUC robot controller. The I/O hardware was installed in a purpose-built cabinet and installed near the FANUC controller, shown in Figure~\ref{fig:cabinet-2}. During motion, an analog output from the I/O module provides the extruder surface speed to the Megatronics board, which can use that information to control the extrusion speed accordingly.
+
+The Megatronics board was chosen for its easy setup and campatibility with other widely-used 3D printing hardware and software, including the Marlin firmware. Once configured for the Megatronics board and for filament drive geometry of the custom extruder, the firmware was uploaded using the popular Arduino IDE. The board was mounted on the robot cage frame for easy access during debugging and maintenance and for proximity to the printing area, shown in Figure~\ref{fig:mounted-mega}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/mounted-mega}
+    \caption{The mounted Megatronics board.}
+    \label{fig:mounted-mega}
+\end{figure}
 
 \begin{figure}[t]
     \centering
     \includegraphics[width=.8\linewidth]{figures/diagrams/system overview}
     \caption{Overview of the 3D printer controls.}
     \label{fig:sys-overview}
+\end{figure}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/cabinet2}
+    \caption{The I/O cabinet installed alongside the FANUC controller.}
+    \label{fig:cabinet-2}
 \end{figure}
 
 \subsection*{FANUC Setup}
