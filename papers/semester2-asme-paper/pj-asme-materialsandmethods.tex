@@ -57,9 +57,9 @@ Figure~\ref{fig:sys-overview} gives a schematic overview of the mechanical, hard
 
 In a typical RepRap 3D printer using a Megatronics board, the Megatronics board is used to control the path of the extruder as well as the extrusion feed rate; the Marlin firmware can adjust the extruder filament feedrate according to the surface speed of the extruder in order to maintain the desired volu. However, here, the FANUC controller provides the motion control, while the Megatronics board only controls the extrusion. Thus, additional interfacing is required to provide the Megatronics board with real-time information about the robot's motion. For this purpose, I/O hardware was connected to the FANUC robot controller. The I/O hardware was installed in a purpose-built cabinet and installed near the FANUC controller, shown in Figure~\ref{fig:cabinet-2}. During motion, an analog output from the I/O module provides the extruder surface speed to the Megatronics board, which can use that information to control the extrusion speed accordingly.
 
-The Megatronics board was chosen for its easy setup and campatibility with other widely-used 3D printing hardware and software, including the Marlin firmware. Once configured for the Megatronics board and for filament drive geometry of the custom extruder, the firmware was uploaded using the popular Arduino IDE. The board was mounted on the robot cage frame for easy access during debugging and maintenance and for proximity to the printing area, shown in Figure~\ref{fig:mounted-mega}.
+The Megatronics board was chosen for its easy setup and campatibility with other widely-used 3D printing hardware and software, including the Marlin firmware. Once configured for the Megatronics board and for filament drive geometry of the custom extruder, the firmware was uploaded using the popular Arduino IDE. The board was mounted on the robot cage frame for easy access during debugging and maintenance and for proximity to the printing area, shown in Figure~\ref{fig:mounted-mega}. The Megatronics board receives G code commands from a connected computer over a USB interface from the Pronterface program, which provides a graphical interface for common 3D printer controls. 
 
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=.8\linewidth]{figures/mounted-mega}
     \caption{The mounted Megatronics board.}
@@ -82,4 +82,8 @@ The Megatronics board was chosen for its easy setup and campatibility with other
 
 \subsection*{FANUC Setup}
 
-test text\\
+The FANUC robot required some setup and programming to be used as an FDM 3D printing platform. New coordinate frames were defined in the robot system to facilitate the later creation of motion instructions. One of these frames is the User Frame, which is attached to the bed of the robot cage, and does not move with the robot; this frame is used as the 3D printing frame. The other frame is the Tool Frame, which is attached to the tip of the custom extruder nozzle and moves with the end of the robot arm. The frame allows motion instructions to be written that moves the nozzle tip precisely without extra calculations. The frames were defined using built-in procedures on the robot controller.
+
+A TP (Teach Pendant) program was writted to generate the printing toolpath for the curved-layer test specimen used in the FEA studies for this project. In other 3D printing systems, the desired 3D model is "sliced", and the resulting toolpath is sent to the printer controller as G-code. Because the FANUC controller does not accept G-code, its built in TP language was used. Because TP must be manually written unless external FANUC software is used, the curved-layer specimen geometry was chosen to be created with minimal TP motion instructions. 
+
+An additional TP program was written to generate the analog output signal to send the speed of the nozzle tip to the Megatronics board. This program was set as a Background Logic program, which the FANUC controller runs every 4ms regardless of what other programs are currently running. 
