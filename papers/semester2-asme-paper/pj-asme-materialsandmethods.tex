@@ -5,11 +5,56 @@ Put materials and methods used here.
 
 \subsection*{Carbon Fiber Filament}
 
-test text\\
+To print carbon fiber a novel CFRP filament was developed using a 1K carbon fiber tow with ABS plastic as the matrix material. Two production methods were explored for creating this filament. First, a pultrusion technique which combined a standard ABS FDM filament and carbon fiber using a 3Doodler, a handheld FDM printer, was attempted. Experimentation with dipping the tow through an ABS-acetone slurry was also explored.
+
+\begin{figure}[t]
+        \centering
+        \begin{subfigure}[b]{0.4\linewidth}
+                \includegraphics[width=\linewidth]{./figures/pultrusion-vid}
+                \caption{Pultrusion.}
+                \label{fig:pultrusion-vid}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+                \includegraphics[width=\linewidth]{./figures/dipping-vid}
+                \caption{Dipping.}
+                \label{fig:dipping-vid}
+        \end{subfigure}
+        \caption{CFRP production methods.}\label{fig:slurry-making}
+\end{figure}
+
+\begin{figure}[t]
+        \centering
+        \begin{subfigure}[b]{0.4\linewidth}
+                \includegraphics[width=\linewidth]{./figures/filament-108-40-dip-side}
+                \caption{Length.}
+                \label{fig:filament-108-40-dip-side}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+                \includegraphics[width=\linewidth]{./figures/filament-108-40-dip-end}
+                \caption{Cross section.}
+                \label{fig:filament-108-40-dip-end}
+        \end{subfigure}
+        \caption{Microscopic photos (10X) of a CFRP filament created with 10 dips using the fully immersed guide in a 16\% ABS solution.}\label{fig:filament-microscope}
+\end{figure}
+
+%\begin{figure}[t]
+%        \centering
+%        \begin{subfigure}[b]{0.3\linewidth}
+%                \includegraphics[width=\linewidth{./figures/filament-108-40-dip-side}
+%                \caption{Length.}
+%                \label{fig:filament-108-40-dip-side}
+%        \end{subfigure}
+%        \begin{subfigure}[b]{0.3\linewidth}
+%                \includegraphics[width=\linewidth]{./figures/filament-108-40-dip-end}
+%                \caption{Cross section.}
+%                \label{fig:filament-108-40-dip-end}
+%        \end{subfigure}
+%        \caption{Microscopic photos (10X) of a CFRP filament created with 10 dips using the fully immersed guide in a 16\% ABS solution.}\label{fig:filament-microscope}
+%\end{figure}
 
 \subsection*{Extruder Design}
 
-An extruder end-effector was designed and fabricated for the curved layer carbon fiber 3D printer. The extruder is the mechanism responsible for depositing the CFRP filament, which is accomplished by reeling in the filament, heating, and printing it. For mounting to the FANUC robot, the extruder's prime design constraints were to includes attachment fixtures for connecting to the robot's Schunk pneumatic gripper and use geometries and materials that minimize torque on the gripper jaws. The designed extruder uses RepRap 3D printing hardware and custom components (machined aluminum and laser-cut acrylic). To drive the filament into the heating chamber, a notched screw, which rests on two bearings, receives a 3:1 step-up in torque from a stepper motor. A bearing for filament counterpressure is mounted between an adjacent set of carrier plates, which can be translated to accomodate filament sizes ranging from 1.75 to 3 mm. Figure~\ref{fig:extruder-side-profile} shows an image of the fabricated extruder, which was designed in SolidWorks, pulling and and printing filament.
+An FDM extruder end-effector was designed and fabricated for the curved layer carbon fiber 3D printer. The extruder is the mechanism responsible for depositing the CFRP filament, which is accomplished by reeling in the filament, heating, and printing it. For mounting to the FANUC robot, the extruder's prime design constraints were to includes attachment fixtures for connecting to the robot's Schunk pneumatic gripper and use geometries and materials that minimize torque on the gripper jaws. The designed extruder uses RepRap 3D printing hardware and custom components (machined aluminum and laser-cut acrylic). To drive the filament into the heating chamber, a notched screw, which rests on two bearings, receives a 3:1 step-up in torque from a stepper motor. A bearing for filament counterpressure is mounted between an adjacent set of carrier plates, which can be translated to accomodate filament sizes ranging from 1.75 to 3 mm. Figure~\ref{fig:extruder-side-profile} shows an image of the fabricated extruder, which was designed in SolidWorks, pulling and and printing filament.
 
 %\begin{figure}[htp]
 %\centering
@@ -21,7 +66,7 @@ An extruder end-effector was designed and fabricated for the curved layer carbon
 \begin{figure}[htp]
 \centering
 \includegraphics[width=0.8\linewidth]{./figures/extruder-side-profile}
-\caption{A SolidWorks rendering of the extruder.}
+\caption{A photo of the side profile of the built extruder.}
 \label{fig:extruder-side-profile}
 \end{figure}
 
