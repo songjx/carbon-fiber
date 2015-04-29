@@ -9,17 +9,42 @@ test text\\
 
 \subsection*{Extruder Design}
 
-test text\\
+An extruder end-effector was designed and fabricated for the curved layer carbon fiber 3D printer. The extruder is the mechanism responsible for depositing the CFRP filament, which is accomplished by reeling in the filament, heating, and printing it. For mounting to the FANUC robot, the extruder's prime design constraints were to includes attachment fixtures for connecting to the robot's Schunk pneumatic gripper and use geometries and materials that minimize torque on the gripper jaws. The designed extruder uses RepRap 3D printing hardware and custom components (machined aluminum and laser-cut acrylic). To drive the filament into the heating chamber, a notched screw, which rests on two bearings, receives a 3:1 step-up in torque from a stepper motor. A bearing for filament counterpressure is mounted between an adjacent set of carrier plates, which can be translated to accomodate filament sizes ranging from 1.75 to 3 mm. Figure~\ref{fig:extruder-side-profile} shows an image of the fabricated extruder, which was designed in SolidWorks, pulling and and printing filament.
+
+%\begin{figure}[htp]
+%\centering
+%\includegraphics[width=0.8\linewidth]{./figures/extruder-iso}
+%\caption{A SolidWorks rendering of the extruder.}
+%\label{fig:extruder-iso}
+%\end{figure}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.8\linewidth]{./figures/extruder-side-profile}
+\caption{A SolidWorks rendering of the extruder.}
+\label{fig:extruder-side-profile}
+\end{figure}
+
+%test text\\
 
 \subsection*{Finite Element Analysis}
 
-ANSYS Composite PrepPost (ACP) finite element analysis software was used to predict the mechanical properties and failure behavior of the bridge specimen. ACP utilizes orthopic shell elements, ply thickness assignments, oriented element sets, and stackup configurations to model and analyze fiberous, composite structures of multiple layers. Various failure criteria, such as Puck or Tsai-Wu failure theories, are utilized in solving to predict failure modes and critical layers given the applied loads and boundary conditions.
+ANSYS Composite PrepPost (ACP) finite element analysis software was used to predict the mechanical properties and failure behavior of the bridge specimen. ACP utilizes orthopic shell elements, ply thickness assignments, oriented element sets, and stackup configurations to model and analyze fiberous, composite structures of multiple layers. A surface representation of the bridge specimen, shown in Figure~\ref{fig:fea-bridge-speciment}, was modeled in SolidWorks and imported in ACP. Material properties for ABS and carbon fiber were used in their respective directions to define the orthotropic elements.
+
+Various failure criteria, such as Puck or Tsai-Wu failure theories, can be utilized in ACP to predict failure modes and critical layers given the applied loads and boundary conditions \cite{ACP-manual}. Puck's failure criterion, a phenomenological failure behavior for uni-directional (UD) CFRPs \cite{Puck-Stuttgard,Puck-NASA}, was applied to this model under the loading conditions desribed in the introduction. This mimics the printing condition where all printed CFRP strands are extruded lengthwise so that the carbon fibers react most of the tesile bending stresses caused by compression of the part ends. Figure~\ref{fig:fea-acp-asme} shows the ACP representation of the model, which utilizes a layer thickness 0.4 mm (the extruder end-effector nozzle outlet diameter) to achieve a desired part thickness of 3.175 m.
 
 \begin{figure}[htp]
-%\centering
-\includegraphics[width=0.4\textwidth]{./figures/fea/fea-surface-geometry}
+\centering
+\includegraphics[width=0.8\linewidth]{./figures/fea/fea-surface-geometry}
 \caption{The surface geometry used in ACP.}
 \label{fig:fea-bridge-speciment}
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.8\linewidth]{./figures/fea/fea-acp-asme}
+\caption{ACP FEM showing fiber direction and layers.}
+\label{fig:fea-acp-asme}
 \end{figure}
 
 %test text. test citations \cite{Puck-Stuttgard,Puck-NASA}.\\
